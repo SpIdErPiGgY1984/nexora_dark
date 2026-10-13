@@ -1,0 +1,23 @@
+/**
+ * Nexora Dark style for phpBB.
+ *
+ * @copyright (c) 2026 Spiderpiggy
+ * @copyright (c) phpBB Limited
+ * @license GNU General Public License, version 2 (GPL-2.0-only)
+ *
+ * Based on prosilver and Lucid Lime by Melvin García.
+ */
+@import url("normalize.css?hash=97d8edd5");
+@import url("base.css?hash=697460b9");
+@import url("utilities.css?hash=b1bd9b82");
+@import url("common.css?hash=8d796ebb");
+@import url("links.css?hash=a561581d");
+@import url("content.css?hash=eca717e2");
+@import url("buttons.css?hash=cbf3164e");
+@import url("cp.css?hash=a0f152c0");
+@import url("forms.css?hash=7a9628e2");
+@import url("icons.css?hash=a6d33d75");
+@import url("colours.css?hash=3718654f");
+@import url("responsive.css?hash=a942160f");
+
+@import url("nexora_visual.css?v=103reviewfix");

@@ -1,0 +1,127 @@
+{#
+ * Nexora Dark style for phpBB.
+ *
+ * @copyright (c) 2026 Spiderpiggy
+ * @copyright (c) phpBB Limited
+ * @license GNU General Public License, version 2 (GPL-2.0-only)
+ #}
+<!-- INCLUDE overall_header.html -->
+
+<div class="sp-viewonline">
+
+	<div class="sp-viewonline-header">
+		<div class="sp-viewonline-heading">
+			<h2>{TOTAL_REGISTERED_USERS_ONLINE}</h2>
+
+			<p class="sp-viewonline-guests">
+				{TOTAL_GUEST_USERS_ONLINE}
+				<!-- IF S_SWITCH_GUEST_DISPLAY -->
+					<span class="sp-viewonline-separator">&bull;</span>
+					<a href="{U_SWITCH_GUEST_DISPLAY}">{L_SWITCH_GUEST_DISPLAY}</a>
+				<!-- ENDIF -->
+			</p>
+		</div>
+
+		<div class="sp-viewonline-pagination">
+			<!-- IF .pagination -->
+				<!-- INCLUDE pagination.html -->
+			<!-- ELSE -->
+				{PAGE_NUMBER}
+			<!-- ENDIF -->
+		</div>
+	</div>
+
+	<div class="sp-viewonline-card">
+
+		<!-- IF .user_row -->
+			<div class="sp-viewonline-table-wrap">
+				<table class="table1 sp-viewonline-table">
+					<thead>
+						<tr>
+							<th class="name">
+								<a href="{U_SORT_USERNAME}">{L_USERNAME}</a>
+							</th>
+							<th class="info">
+								<a href="{U_SORT_LOCATION}">{L_FORUM_LOCATION}</a>
+							</th>
+							<th class="active">
+								<a href="{U_SORT_UPDATED}">{L_LAST_UPDATED}</a>
+							</th>
+						</tr>
+					</thead>
+
+					<tbody>
+					<!-- BEGIN user_row -->
+						<tr>
+							<td class="sp-viewonline-user">
+								<div class="sp-viewonline-user-top">
+									<div class="sp-viewonline-username">
+										<!-- EVENT viewonline_body_username_prepend -->
+										{user_row.USERNAME_FULL}
+										<!-- EVENT viewonline_body_username_append -->
+									</div>
+
+									<!-- IF user_row.USER_IP -->
+										<div class="sp-viewonline-ip">
+											<span>{L_IP}{L_COLON}</span>
+											<a href="{user_row.U_USER_IP}">{user_row.USER_IP}</a>
+											<span class="sp-viewonline-whois-separator">&#187;</span>
+											<a href="{user_row.U_WHOIS}" class="sp-viewonline-whois" onclick="popup(this.href, 750, 500); return false;">{L_WHOIS}</a>
+										</div>
+									<!-- ENDIF -->
+								</div>
+
+								<!-- IF user_row.USER_BROWSER -->
+									<div class="sp-viewonline-browser">
+										{user_row.USER_BROWSER}
+									</div>
+								<!-- ENDIF -->
+							</td>
+
+							<td class="info sp-viewonline-location">
+								<span class="sp-mobile-label">{L_FORUM_LOCATION}</span>
+								<a href="{user_row.U_FORUM_LOCATION}">{user_row.FORUM_LOCATION}</a>
+							</td>
+
+							<td class="active sp-viewonline-updated">
+								<span class="sp-mobile-label">{L_LAST_UPDATED}</span>
+								{user_row.LASTUPDATE}
+							</td>
+						</tr>
+					<!-- END user_row -->
+					</tbody>
+				</table>
+			</div>
+		<!-- ELSE -->
+			<div class="sp-viewonline-empty">
+				{L_NO_ONLINE_USERS}
+				<!-- IF S_SWITCH_GUEST_DISPLAY -->
+					<span class="sp-viewonline-separator">&bull;</span>
+					<a href="{U_SWITCH_GUEST_DISPLAY}">{L_SWITCH_GUEST_DISPLAY}</a>
+				<!-- ENDIF -->
+			</div>
+		<!-- ENDIF -->
+
+	</div>
+
+	<!-- IF LEGEND -->
+		<div class="sp-viewonline-legend">
+			<span class="sp-viewonline-legend-label">{L_LEGEND}{L_COLON}</span>
+			{LEGEND}
+		</div>
+	<!-- ENDIF -->
+
+	<div class="sp-viewonline-bottom">
+		<div class="sp-viewonline-pagination">
+			<!-- IF .pagination -->
+				<!-- INCLUDE pagination.html -->
+			<!-- ELSE -->
+				{PAGE_NUMBER}
+			<!-- ENDIF -->
+		</div>
+	</div>
+
+</div>
+
+<!-- INCLUDE jumpbox.html -->
+<!-- INCLUDE overall_footer.html -->

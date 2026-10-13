@@ -1,0 +1,2513 @@
+/*
+--------------------------------------------------------------
+Colours and backgrounds for common.css
+-------------------------------------------------------------- */
+
+/* Nexora Dark achtergrond */
+html,
+body {
+	background: #090d12 !important;
+	color: #cccccc;
+	min-height: 100%;
+	overflow-x: hidden;
+}
+
+body {
+	position: relative;
+	margin: 0;
+	background:
+		radial-gradient(
+			circle at 8% 8%,
+			rgba(143,124,255,.10),
+			transparent 28%
+		),
+		radial-gradient(
+			circle at 92% 14%,
+			rgba(125,242,183,.055),
+			transparent 30%
+		),
+		#090d12 !important;
+	background-attachment: fixed !important;
+}
+
+/* Geen extra Matrix-raster of scanlijnen */
+body::before,
+body::after {
+	content: none !important;
+}
+
+#wrap,
+.wrap {
+	position: relative;
+	z-index: auto;
+}
+
+#page-header {
+	position: relative;
+	z-index: 50;
+}
+
+#page-body {
+	position: relative;
+	z-index: auto;
+}
+
+#page-footer {
+	position: relative;
+	z-index: 2;
+}
+
+h1 {
+	color: #ffffff;
+}
+
+h2 {
+	color: #cccccc;
+}
+
+h3 {
+	border-bottom-color: #343044;
+	color: #cccccc;
+}
+
+hr {
+	border-color: #343044;
+	border-top-color: #343044;
+}
+
+/*
+--------------------------------------------------------------
+Colours and backgrounds for links.css
+-------------------------------------------------------------- */
+
+a {
+	color: #8f7cff;
+}
+a:hover {
+	color: #b8adff;
+}
+
+/* Links on gradient backgrounds */
+.forumbg .header a,
+.forabg .header a,
+th a {
+	color: #d7dee7;
+}
+
+.forumbg .header a:hover,
+.forabg .header a:hover,
+th a:hover {
+	color: #ffffff;
+}
+
+/* Notification mark read link */
+.dropdown-extended a.mark_read {
+	background-color: #14131d;
+}
+a.forumtitle {
+	color: #e7edf4;
+}
+
+a.forumtitle:hover {
+	color: #b8adff;
+	text-decoration: underline;
+}
+/* Post body links */
+.postlink {
+	border-bottom-color: #8f7cff;
+	color: #8f7cff;
+}
+
+.postlink:visited {
+	border-bottom-color: #a0edff;
+	color: #a0edff;
+}
+
+.postlink:hover {
+	background-color: #191725;
+	color: #b8adff;
+}
+
+.signature a,
+.signature a:hover {
+	background-color: transparent;
+}
+
+/* Back to top of page */
+.top i {
+	color: #999999;
+}
+
+/* Arrow links  */
+.arrow-left:hover,
+.arrow-right:hover {
+	color: #b8adff;
+}
+
+/* Round cornered boxes and backgrounds
+---------------------------------------- */
+.headerbar {
+	background-color: #12101a;
+	background-image: linear-gradient(115deg, rgba(143,124,255,.08), rgba(125,242,183,.025));
+	color: #ffffff;
+}
+
+.forumbg,
+.forabg {
+	margin-top: 10px;
+	margin-bottom: 24px;
+	padding: 5px !important;
+	border-radius: 10px;
+	overflow: hidden;
+	background:
+		radial-gradient(
+			circle at top,
+			rgba(143,124,255,.050),
+			transparent 70%
+		),
+		linear-gradient(
+			rgba(27,31,39,.94),
+			rgba(27,31,39,.94)
+		),
+		url("./images/bg_list.gif") repeat;
+	border: 1px solid rgba(143,124,255,.20);
+	box-shadow:
+		0 0 12px rgba(143,124,255,.08),
+		inset 0 0 12px rgba(143,124,255,.025);
+	backdrop-filter: blur(6px);
+}
+
+.navbar {
+	background-color: #14131d;
+}
+
+/* Compact guest actions in the existing navigation row */
+#nav-main > li.sp-auth-action--register > a {
+	background: #6652c2;
+	border-color: #8f7cff;
+	color: #ffffff;
+}
+
+#nav-main > li.sp-auth-action--login > a {
+	background: #211d2e;
+	border-color: #8f7cff;
+	color: #ffffff;
+}
+
+#nav-main > li.sp-auth-action > a:hover,
+#nav-main > li.sp-auth-action > a:focus-visible {
+	background: #7864da;
+	border-color: #b8adff;
+	color: #ffffff;
+}
+
+.panel {
+	background: rgba(27,31,39,.90);
+	backdrop-filter: blur(6px);
+	color: #cccccc;
+}
+
+.post:target .content {
+	color: #e6e6e6;
+}
+
+.post h3 a.first-unread,
+.post:target h3 a {
+	color: #ffffff;
+}
+
+.bg1 {
+	background-color: #14131d;
+}
+
+table.zebra-list tr:nth-child(odd) td,
+ul.zebra-list li:nth-child(odd) {
+	background-color: #14131d;
+}
+
+.bg2 {
+	background-color: #14131d;
+}
+
+table.zebra-list tr:nth-child(even) td,
+ul.zebra-list li:nth-child(even) {
+	background-color: #14131d;
+}
+
+.bg3 {
+	background-color: #14131d;
+}
+
+.ucprowbg {
+	background-color: #14131d;
+}
+
+.fieldsbg {
+	background-color: #14131d;
+}
+
+.site_logo {
+	background-image: url("./images/site_logo.png?v=nexora-dark-1");
+	background-size: contain;
+	background-position: center;
+}
+
+/* Horizontal lists
+----------------------------------------*/
+
+ul.navlinks {
+	border-top-color: #343044;
+}
+
+/* Table styles
+----------------------------------------*/
+table.table1 thead th {
+	color: #e6e6e6;
+}
+
+table.table1 tbody tr {
+	border-color: transparent;
+}
+
+table.table1 tbody tr:hover,
+table.table1 tbody tr.hover {
+	background-color: #14131d;
+	color: #cccccc;
+}
+
+table.table1 td {
+	color: #cccccc;
+}
+
+table.table1 tbody td {
+	border-bottom-color: #cccccc;
+}
+
+table.table1 tbody th {
+	border-bottom-color: #343044;
+	color: #cccccc;
+	background-color: #14131d;
+}
+
+table.info tbody th {
+	color: #e6e6e6;
+}
+
+/* Misc layout styles
+---------------------------------------- */
+dl.details dt {
+	color: #cccccc;
+}
+
+dl.details dd {
+	color: #cccccc;
+}
+
+.sep {
+	color: #394033;
+}
+
+/* Icon styles - Nexora Dark
+---------------------------------------- */
+.icon {
+	color: #8f7cff;
+}
+.icon.icon-blue,
+a:hover .icon.icon-blue {
+	color: #8f7cff;
+}
+
+.icon.icon-orange,
+a:hover .icon.icon-orange {
+	color: #e6aa6a;
+}
+
+.icon.icon-red,
+a:hover .icon.icon-red {
+	color: #e66a7f;
+}
+
+.icon.icon-green,
+a:hover .icon.icon-green {
+	color: #6fbf82;
+}
+
+.icon.icon-bluegray,
+a:hover .icon.icon-bluegray {
+	color: #8ea4ba;
+}
+
+.icon.icon-gray,
+a:hover .icon.icon-gray {
+	color: #929eaa;
+}
+
+.icon.icon-lightgray,
+a:hover .icon.icon-lightgray {
+	color: #b9c5d0;
+}
+
+.icon.icon-black,
+a:hover .icon.icon-black {
+	color: #dce4ec;
+}
+
+.alert_close .icon:before {
+	background-color: #15131c;
+}
+
+/* Jumpbox */
+.jumpbox .dropdown li {
+	border-top-color: #3c374d;
+}
+
+.jumpbox-cat-link {
+	background-color: #14131d;
+	border-top-color: #3c374d;
+}
+
+.jumpbox-cat-link:hover {
+	background-color: #14131d;
+	border-top-color: #3c374d;
+}
+
+.jumpbox-forum-link {
+	background-color: #14131d;
+}
+
+.jumpbox-forum-link:hover {
+	background-color: #14131d;
+}
+
+.jumpbox .dropdown .pointer-inner {
+	border-color: #3c374d transparent;
+}
+
+.jumpbox-sub-link {
+	background-color: #14131d;
+}
+
+.jumpbox-sub-link:hover {
+	background-color: #14131d;
+}
+
+/* Miscellaneous styles
+---------------------------------------- */
+
+.copyright {
+	color: #bfbfbf;
+}
+
+.error {
+	color: #ff3867;
+}
+
+li.reported:hover {
+	background-color: transparent !important;
+}
+.sticky,
+.announce {
+	/* you can add a background for stickies and announcements*/
+}
+
+div.rules {
+	background-color: #1b2028;
+	color: #dce4ec;
+	border-color: #9785ff;
+}
+
+div.rules a {
+	color: #9785ff;
+}
+
+div.rules a:hover {
+	color: #5DADE2;
+}
+p.post-notice {
+	background-color: #801a1a;
+	background-image: none;
+}
+
+/*
+--------------------------------------------------------------
+Colours and backgrounds for content.css
+-------------------------------------------------------------- */
+
+ul.forums {
+	background-color: #14131d;
+}
+
+ul.topiclist li {
+	color: #cccccc;
+}
+
+ul.topiclist dd {
+	border-left-color: #343044;
+}
+
+.rtl ul.topiclist dd {
+	border-right-color: #343044;
+}
+
+li.row {
+	border-top-color: #353d4c;
+	border-bottom-color: #20252f;
+}
+
+li.row strong {
+	color: #e6e6e6;
+}
+
+li.row:hover {
+	background-color: #14131d;
+}
+
+li.row:hover dd {
+	border-left-color: #343044;
+}
+
+.rtl li.row:hover dd {
+	border-right-color: #343044;
+	border-left-color: transparent;
+}
+
+li.header {
+	background:
+		linear-gradient(
+			180deg,
+			rgba(143,124,255,.08),
+			rgba(34,39,51,.88) 45%
+		);
+
+	border-bottom: 1px solid rgba(143,124,255,.20);
+	box-shadow:
+		inset 0 1px rgba(143, 124, 255,.10);
+}
+
+li.header dt,
+li.header dd {
+	background: transparent;
+	color: #e1e6d8;
+	font-weight: 700;
+}
+
+/* Post body styles
+----------------------------------------*/
+.postbody {
+	color: #bdbdbd;
+}
+
+/* Content container styles
+----------------------------------------*/
+.content {
+	color: #cccccc;
+}
+
+.content h2,
+.panel h2 {
+	color: #c2b8ff;
+	border-bottom-color: #343044;
+}
+
+dl.faq dt {
+	color: #e0e0e0;
+}
+
+.posthilit {
+	background-color: transparent;
+	color: #e0e0e0;
+}
+
+.announce,
+.unreadpost {
+	/* Highlight the announcements & unread posts box */
+}
+
+/* Post signature */
+.signature {
+	border-top-color: #343044;
+}
+
+/* Post noticies */
+.notice {
+	border-top-color: #343044;
+}
+
+/* BB Code styles
+----------------------------------------*/
+/* Quote block */
+blockquote {
+	color: #cccccc;
+	background-color: #242131 !important;
+	background-position: 5px 3px;
+	border-left: 4px solid #394150;
+	border-bottom: 1px solid #394150;
+}
+
+blockquote blockquote {
+	/* Nested quotes */
+	background-color: #14131d !important;
+	border-left: 4px solid #343044;
+	border-bottom: 1px solid #343044;
+}
+
+blockquote blockquote blockquote {
+	/* Nested quotes */
+	background-color: #14131d !important;
+	border-left: 4px solid #404958;
+	border-bottom: 1px solid #404958;
+}
+
+/* Code block */
+.codebox {
+	background-color: transparent;
+	border-color: transparent;
+}
+
+.codebox p {
+	border-bottom-color: #343044;
+}
+
+.codebox code {
+	color: #cccccc;
+}
+
+/* Attachments
+----------------------------------------*/
+.attachbox {
+	background-color: #242131;
+	border-color: #b8adff;
+}
+
+.pm-message .attachbox {
+	background-color: transparent;
+}
+
+.attachbox dd {
+	border-top-color: #b8adff;
+}
+
+.attachbox p {
+	color: #666666;
+}
+
+.attachbox p.stats {
+	color: #666666;
+}
+
+.attach-image img {
+	border-color: #b8adff;
+}
+
+/* Inline image thumbnails */
+
+dl.file dd {
+	color: #666666;
+}
+
+dl.thumbnail img {
+	border-color: #666666;
+	background-color: #ffffff;
+}
+
+dl.thumbnail dd {
+	color: #666666;
+}
+
+dl.thumbnail dt a:hover {
+	background-color: #eeeeee;
+}
+
+dl.thumbnail dt a:hover img {
+	border-color: #b8adff;
+}
+
+/* Post poll styles
+----------------------------------------*/
+
+fieldset.polls dl {
+	border-top-color: #49435d;
+	color: #b9c5d0;
+}
+
+fieldset.polls dl.voted {
+	color: #cccccc;
+}
+
+fieldset.polls dd div {
+	color: #e6e6e6;
+}
+
+.rtl .pollbar1,
+.rtl .pollbar2,
+.rtl .pollbar3,
+.rtl .pollbar4,
+.rtl .pollbar5 {
+	border-right-color: transparent;
+}
+
+.pollbar1 {
+	background-color: #8f7cff;
+	border-bottom-color: #c46f55;
+	border-right-color: #8e4f43;
+}
+
+.rtl .pollbar1 {
+	border-left-color: #74162c;
+}
+
+.pollbar2 {
+	background-color: #8f7cff;
+	border-bottom-color: #c46f55;
+	border-right-color: #8e4f43;
+}
+
+.rtl .pollbar2 {
+	border-left-color: #8c1c38;
+}
+
+.pollbar3 {
+	background-color: #8f7cff;
+	border-bottom-color: #c46f55;
+	border-right-color: #8e4f43;
+}
+
+.rtl .pollbar3 {
+	border-left-color: #aa2346;
+}
+
+.pollbar4 {
+	background-color: #8f7cff;
+	border-bottom-color: #c46f55;
+	border-right-color: #8e4f43;
+}
+
+.rtl .pollbar4 {
+	border-left-color: #be1e4a;
+}
+
+.pollbar5 {
+	background-color: #8f7cff;
+	border-bottom-color: #c46f55;
+	border-right-color: #8e4f43;
+}
+
+.rtl .pollbar5 {
+	border-left-color: #d11a4e;
+}
+
+/* Poster profile block
+----------------------------------------*/
+.postprofile {
+	color: #b8b8b8;
+	border-color: #49435d;
+}
+
+.pm .postprofile {
+	border-color: #49435d;
+}
+
+.postprofile strong {
+	color: #776aa8;
+}
+
+/* Remove the legacy online image without clearing post gradients. */
+.online:not(.post) {
+	background-image: none !important;
+}
+
+.online {
+	position: relative;
+}
+
+.online::before {
+	content: "";
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	width: 13px;
+	height: 13px;
+	border-radius: 50%;
+	background: #50d890;
+	border: 2px solid #2b2b2b;
+	box-shadow:
+		0 0 6px rgba(80,216,144,.8),
+		0 0 14px rgba(80,216,144,.45);
+	animation: onlinePulse 2.5s ease-in-out infinite;
+	z-index: 5;
+}
+
+@keyframes onlinePulse {
+	0%, 100% {
+		transform: scale(1);
+		box-shadow:
+			0 0 6px rgba(80,216,144,.8),
+			0 0 14px rgba(80,216,144,.45);
+	}
+
+	50% {
+		transform: scale(1.15);
+		box-shadow:
+			0 0 10px rgba(80,216,144,1),
+			0 0 20px rgba(80,216,144,.7);
+	}
+}
+
+dd.profile-warnings {
+	color: #bc2a4d;
+}
+
+/*
+--------------------------------------------------------------
+Colours and backgrounds for buttons.css
+-------------------------------------------------------------- */
+.button {
+	border-color: #343044;
+	background-color: #1f2430;
+	color: #e7edf4;
+}
+
+.button:hover,
+.button:focus {
+	border-color: #b8adff;
+	background-color: #251923;
+}
+
+.button .icon,
+.button-secondary {
+	color: #8f7cff;
+}
+
+.button-secondary:focus,
+.button-secondary:hover,
+.button:focus .icon,
+.button:hover .icon {
+	color: #8f7cff;
+}
+
+.button-search:hover,
+.button-search-end:hover {
+	border-color: #b8adff;
+}
+
+.caret {
+	border-color: #b9c5d0;
+}
+
+.contact-icons a {
+	border-color: #49435d;
+}
+.contact-icons a:hover {
+	background-color: #242131;
+}
+
+/* =========================================================
+   Nexora Dark - moderne radio buttons
+   ========================================================= */
+
+input[type="radio"] {
+	appearance: none;
+	-webkit-appearance: none;
+	width: 14px;
+	height: 14px;
+	margin: 0 6px 0 0;
+	vertical-align: -2px;
+	border: 1px solid #647181;
+	border-radius: 50%;
+	background: #0d0c13;
+	box-shadow:
+		inset 0 0 0 3px #0d0c13,
+		0 0 0 1px rgba(255, 255, 255, .025);
+	cursor: pointer;
+	transition:
+		border-color .18s ease,
+		background-color .18s ease,
+		box-shadow .18s ease,
+		transform .18s ease;
+}
+
+/* Hover */
+input[type="radio"]:hover {
+	border-color: #b8adff;
+	background-color: rgba(159,140,255, .15);
+	box-shadow:
+		inset 0 0 0 3px #0d0c13,
+		0 0 6px rgba(159,140,255, .20);
+	transform: scale(1.08);
+}
+
+/* Geselecteerd */
+input[type="radio"]:checked {
+	border-color: #b8adff;
+	background-color: #b8adff;
+	box-shadow:
+		inset 0 0 0 3px #0d0c13,
+		0 0 7px rgba(159,140,255, .32);
+}
+
+/* Kleine reactie bij klikken */
+input[type="radio"]:active {
+	transform: scale(.88);
+}
+
+/* Toetsenbordnavigatie */
+input[type="radio"]:focus-visible {
+	outline: none;
+	box-shadow:
+		inset 0 0 0 3px #0d0c13,
+		0 0 0 2px rgba(128, 191, 255, .30),
+		0 0 7px rgba(159,140,255, .25);
+}
+
+/* =========================================================
+   Nexora Dark - moderne checkboxen
+   ========================================================= */
+
+input[type="checkbox"] {
+	appearance: none;
+	-webkit-appearance: none;
+	width: 14px;
+	height: 14px;
+	margin: 0 5px 0 0;
+	vertical-align: -2px;
+	border: 1px solid #647181;
+	border-radius: 4px;
+	background: #0d0c13;
+	cursor: pointer;
+	position: relative;
+	transition:
+		border-color .18s ease,
+		background-color .18s ease,
+		box-shadow .18s ease,
+		transform .18s ease;
+}
+
+/* Hover */
+input[type="checkbox"]:hover {
+	border-color: #b8adff;
+	background: rgba(159,140,255, .08);
+	box-shadow: 0 0 6px rgba(159,140,255, .18);
+	transform: scale(1.08);
+}
+
+/* Geselecteerd */
+input[type="checkbox"]:checked {
+	border-color: #b8adff;
+	background: #b8adff;
+	box-shadow: 0 0 7px rgba(159,140,255, .28);
+}
+
+/* Modern vinkje */
+input[type="checkbox"]:checked::after {
+	content: "";
+	position: absolute;
+	left: 4px;
+	top: 1px;
+	width: 3px;
+	height: 7px;
+	border: solid #0d0c13;
+	border-width: 0 2px 2px 0;
+	transform: rotate(45deg);
+}
+
+/* Klik-effect */
+input[type="checkbox"]:active {
+	transform: scale(.88);
+}
+
+/* Toetsenbordnavigatie */
+input[type="checkbox"]:focus-visible {
+	outline: none;
+	box-shadow:
+		0 0 0 2px rgba(128, 191, 255, .30),
+		0 0 7px rgba(159,140,255, .25);
+}
+
+/* Uitgeschakelde checkbox */
+input[type="checkbox"]:disabled {
+	opacity: .4;
+	cursor: not-allowed;
+	transform: none;
+}
+
+/* Pagination
+---------------------------------------- */
+
+.pagination li a {
+	background: #14131d;
+	border-color: #49435d;
+	color: #cccccc;
+}
+
+.pagination li.ellipsis span {
+	background: transparent;
+	color: #ffb078;
+}
+
+.pagination li.active span {
+	background-color: #8f7cff;
+	border-color: #8f7cff;
+	color: #ffffff;
+}
+
+.pagination li a:hover,
+.pagination li a:hover .icon,
+.pagination .dropdown-visible a.dropdown-trigger,
+.nojs .pagination .dropdown-container:hover a.dropdown-trigger {
+	background: #14131d;
+	border-color: #49435d;
+	color: #ffb078;
+}
+
+/* Search box
+--------------------------------------------- */
+
+.search-box .inputbox,
+.search-box .inputbox:hover,
+.search-box .inputbox:focus,
+.search-box .button:hover {
+	border-color: #343044;
+}
+
+.search-header {
+	box-shadow: 0 0 10px #7564cb;
+}
+
+.search-results li:hover,
+.search-results li.active {
+	background-color: #191725;
+}
+
+/* Icon images
+---------------------------------------- */
+
+.contact-icon {
+	background-image: url("./images/icons_contact.png");
+}
+
+/* Profile & navigation icons */
+.pm-icon {
+	background-position: 0 0;
+}
+.email-icon {
+	background-position: -21px 0;
+}
+.jabber-icon {
+	background-position: -80px 0;
+}
+.phpbb_icq-icon {
+	background-position: -61px 0;
+}
+.phpbb_wlm-icon {
+	background-position: -182px 0;
+}
+.phpbb_aol-icon {
+	background-position: -244px 0;
+}
+.phpbb_website-icon {
+	background-position: -40px 0;
+}
+.phpbb_youtube-icon {
+	background-position: -98px 0;
+}
+.phpbb_facebook-icon {
+	background-position: -119px 0;
+}
+.phpbb_skype-icon {
+	background-position: -161px 0;
+}
+.phpbb_twitter-icon {
+	background-position: -202px 0;
+}
+.phpbb_yahoo-icon {
+	background-position: -224px 0;
+}
+
+/* Forum icons & Topic icons */
+.global_read {
+	background-image: url("./images/announce_read.svg");
+}
+.global_read_mine {
+	background-image: url("./images/announce_read_mine.svg");
+}
+.global_read_locked {
+	background-image: url("./images/announce_read_locked.svg");
+}
+.global_read_locked_mine {
+	background-image: url("./images/announce_read_locked_mine.svg");
+}
+.global_unread {
+	background-image: url("./images/announce_unread.svg");
+}
+.global_unread_mine {
+	background-image: url("./images/announce_unread_mine.svg");
+}
+.global_unread_locked {
+	background-image: url("./images/announce_unread_locked.svg");
+}
+.global_unread_locked_mine {
+	background-image: url("./images/announce_unread_locked_mine.svg");
+}
+
+.announce_read {
+	background-image: url("./images/announce_read.svg");
+}
+.announce_read_mine {
+	background-image: url("./images/announce_read_mine.svg");
+}
+.announce_read_locked {
+	background-image: url("./images/announce_read_locked.svg");
+}
+.announce_read_locked_mine {
+	background-image: url("./images/announce_read_locked_mine.svg");
+}
+.announce_unread {
+	background-image: url("./images/announce_unread.svg");
+}
+.announce_unread_mine {
+	background-image: url("./images/announce_unread_mine.svg");
+}
+.announce_unread_locked {
+	background-image: url("./images/announce_unread_locked.svg");
+}
+.announce_unread_locked_mine {
+	background-image: url("./images/announce_unread_locked_mine.svg");
+}
+
+.forum_link {
+	background-image: url("./images/forum_link.svg");
+}
+.forum_read {
+	background-image: url("./images/forum_read.svg");
+}
+.forum_read_locked {
+	background-image: url("./images/forum_read_locked.svg");
+}
+.forum_read_subforum {
+	background-image: url("./images/forum_read_subforum.svg");
+}
+.forum_unread {
+	background-image: url("./images/forum_unread.svg");
+}
+.forum_unread_locked {
+	background-image: url("./images/forum_unread_locked.svg");
+}
+.forum_unread_subforum {
+	background-image: url("./images/forum_unread_subforum.svg");
+}
+
+.sticky_read {
+	background-image: url("./images/sticky_read.svg");
+}
+.sticky_read_mine {
+	background-image: url("./images/sticky_read_mine.svg");
+}
+.sticky_read_locked {
+	background-image: url("./images/sticky_read_locked.svg");
+}
+.sticky_read_locked_mine {
+	background-image: url("./images/sticky_read_locked_mine.svg");
+}
+.sticky_unread {
+	background-image: url("./images/sticky_unread.svg");
+}
+.sticky_unread_mine {
+	background-image: url("./images/sticky_unread_mine.svg");
+}
+.sticky_unread_locked {
+	background-image: url("./images/sticky_unread_locked.svg");
+}
+.sticky_unread_locked_mine {
+	background-image: url("./images/sticky_unread_locked_mine.svg");
+}
+
+.topic_moved {
+	background-image: url("./images/topic_moved.svg");
+}
+.pm_read,
+.topic_read {
+	background-image: url("./images/topic_read.svg");
+}
+.topic_read_mine {
+	background-image: url("./images/topic_read_mine.svg");
+}
+.topic_read_hot {
+	background-image: url("./images/topic_read_hot.svg");
+}
+.topic_read_hot_mine {
+	background-image: url("./images/topic_read_hot_mine.svg");
+}
+.topic_read_locked {
+	background-image: url("./images/topic_read_locked.svg");
+}
+.topic_read_locked_mine {
+	background-image: url("./images/topic_read_locked_mine.svg");
+}
+.pm_unread,
+.topic_unread {
+	background-image: url("./images/topic_unread.svg");
+}
+.topic_unread_mine {
+	background-image: url("./images/topic_unread_mine.svg");
+}
+.topic_unread_hot {
+	background-image: url("./images/topic_unread_hot.svg");
+}
+.topic_unread_hot_mine {
+	background-image: url("./images/topic_unread_hot_mine.svg");
+}
+.topic_unread_locked {
+	background-image: url("./images/topic_unread_locked.svg");
+}
+.topic_unread_locked_mine {
+	background-image: url("./images/topic_unread_locked_mine.svg");
+}
+
+/*
+--------------------------------------------------------------
+Colours and backgrounds for cp.css
+-------------------------------------------------------------- */
+
+/* Main CP box
+----------------------------------------*/
+
+.panel-container h3,
+.panel-container hr,
+.cp-menu hr {
+	border-color: #343044;
+}
+
+.panel-container .panel li.row {
+	border-bottom-color: #343044;
+	border-top-color: transparent;
+}
+
+ul.cplist {
+	border-top-color: #343044;
+}
+
+.panel-container .panel li.header dd,
+.panel-container .panel li.header dt {
+	color: #cccccc;
+}
+
+.panel-container table.table1 thead th {
+	color: #c2c2c2;
+	border-bottom-color: #343044;
+}
+
+.cp-main .pm-message {
+	border-color: #343044;
+	background-color: transparent;
+}
+
+/* CP tabbed menu
+----------------------------------------*/
+.tabs .tab > a {
+	background: #1f2430;
+	color: #bdbdbd;
+}
+
+.tabs .tab > a:hover {
+	background: #252b38;
+	color: #ffb078;
+}
+
+.tabs .activetab > a,
+.tabs .activetab > a:hover {
+	background: #14131d;
+	background: -moz-linear-gradient(top, #242131 0%, #14131d 100%);
+	background: -webkit-gradient(
+		linear,
+		left top,
+		left bottom,
+		color-stop(0%, #242131),
+		color-stop(100%, #14131d)
+	);
+	background: -webkit-linear-gradient(top, #242131 0%, #14131d 100%);
+	background: -o-linear-gradient(top, #242131 0%, #14131d 100%);
+	background: -ms-linear-gradient(top, #242131 0%, #14131d 100%);
+	background: linear-gradient(to bottom, #242131 0%, #14131d 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#242131', endColorstr='#14131d', GradientType=0 );
+	border-color: #14131d;
+	box-shadow: 0 1px 1px #242131 inset;
+	color: #8f7cff;
+}
+
+.tabs .activetab > a:hover {
+	color: #ffb078;
+}
+
+/* Mini tabbed menu used in MCP
+----------------------------------------*/
+.minitabs .tab > a {
+	background-color: #1f2430;
+	color: #b9c5d0;
+}
+
+.minitabs .tab > a:hover {
+	background-color: #252b38;
+	color: #ffc18a;
+}
+
+.minitabs .activetab > a,
+.minitabs .activetab > a:hover {
+	background-color: #14131d;
+	color: #8f7cff;
+}
+
+/* Responsive tabs
+----------------------------------------*/
+.responsive-tab .responsive-tab-link:before {
+	border-color: #8f7cff;
+}
+
+.responsive-tab .responsive-tab-link:hover:before {
+	border-color: #d31141;
+}
+
+/* UCP navigation menu
+----------------------------------------*/
+
+/* Link styles for the sub-section links */
+.navigation a {
+	color: #cccccc;
+	background-color: transparent;
+	border-left: 2px #49435d solid;
+}
+
+.rtl .navigation a {
+	background-color: transparent;
+}
+
+.navigation a:hover {
+	background-color: transparent;
+	border-left: 2px #8f7cff solid;
+	color: #8f7cff;
+}
+
+.navigation .active-subsection a {
+	background-color: transparent;
+	color: #8f7cff;
+	border-left: 2px #8f7cff solid;
+}
+
+.navigation .active-subsection a:hover {
+	color: #8f7cff;
+}
+
+@media only screen and (max-width: 900px),
+	only screen and (max-device-width: 900px) {
+	#navigation a,
+	.rtl #navigation a {
+		background-color: transparent;
+	}
+}
+
+/* Preferences pane layout
+----------------------------------------*/
+.panel-container h2 {
+	color: #c2c2c2;
+}
+
+.panel-container .panel {
+	background-color: #14131d;
+}
+
+.cp-main .pm {
+	background-color: transparent;
+}
+
+/* Friends list */
+.cp-mini {
+	background-color: transparent;
+	border: 2px solid #49435d;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-khtml-border-radius: 5px;
+	border-radius: 5px;
+}
+
+dl.mini dt {
+	color: #cccccc;
+}
+
+/* PM Styles
+----------------------------------------*/
+/* PM Message history */
+.current {
+	color: #cccccc !important;
+}
+
+/* PM marking colours */
+.pmlist li.pm_message_reported_colour,
+.pm_message_reported_colour {
+	border-left-color: #bc2a4d;
+	border-right-color: #bc2a4d;
+}
+
+.pmlist li.pm_marked_colour,
+.pm_marked_colour {
+	border-color: #ffc000;
+}
+
+.pmlist li.pm_replied_colour,
+.pm_replied_colour {
+	border-color: #b6bfc2;
+}
+
+.pmlist li.pm_friend_colour,
+.pm_friend_colour {
+	border-color: #8f7cff;
+}
+
+.pmlist li.pm_foe_colour,
+.pm_foe_colour {
+	border-color: #e84f2c;
+}
+
+/* Avatar gallery */
+.gallery label {
+	background-color: #14131d;
+	border-color: #49435d;
+}
+
+.gallery label:hover {
+	background-color: #242131;
+	border-color: #8f7cff;
+}
+
+/*
+--------------------------------------------------------------
+Colours and backgrounds for forms.css
+-------------------------------------------------------------- */
+
+/* General form styles
+----------------------------------------*/
+select {
+	border-color: #666;
+	background-color: #242131;
+	color: #d6d6d6;
+}
+
+label {
+	color: #cccccc;
+}
+
+option.disabled-option {
+	color: #7f8994;
+}
+
+/* Definition list layout for forms
+---------------------------------------- */
+dd label {
+	color: #cccccc;
+}
+
+fieldset.fields1 {
+	background-color: transparent;
+}
+
+/* Hover effects */
+fieldset dl:hover dt label {
+	color: #ffb078;
+}
+
+fieldset.fields2 dl:hover dt label {
+	color: inherit;
+}
+
+/* Quick-login on index page */
+fieldset.quick-login input.inputbox {
+	background-color: #191725;
+}
+
+.quick-login-block {
+	background:
+		linear-gradient(
+			180deg,
+			rgba(27, 31, 39, .94),
+			rgba(19, 22, 28, .94)
+		);
+	border: 1px solid rgba(143, 124, 255, .24);
+	box-shadow:
+		0 0 14px rgba(143, 124, 255, .07),
+		inset 0 0 14px rgba(143, 124, 255, .025);
+}
+
+/* Posting page styles
+----------------------------------------*/
+
+.message-box textarea {
+	color: #f0f0f0;
+}
+
+.message-box textarea.drag-n-drop {
+	outline-color: rgba(102, 102, 102, 0.5);
+}
+
+.message-box textarea.drag-n-drop-highlight {
+	outline-color: rgba(17, 163, 234, 0.5);
+}
+
+/* Input field styles
+---------------------------------------- */
+
+.inputbox,
+.inputbox2 {
+	background-color: #191725;
+	border-color: rgba(128, 191, 255, .25);
+	color: #f0f0f0;
+}
+
+/* Placeholdertekst */
+.inputbox::placeholder,
+.inputbox2::placeholder {
+	color: #8f9aa6;
+	opacity: 1;
+}
+
+/* Hover */
+.inputbox:hover,
+.inputbox2:hover {
+	background-color: #191725;
+	border-color: rgba(159,140,255, .45);
+	color: #f0f0f0;
+}
+
+/* Focus */
+.inputbox:focus,
+.inputbox2:focus {
+	background-color: #12161d;
+	border-color: #b8adff;
+	color: #ffffff;
+	box-shadow:
+		0 0 0 2px rgba(159,140,255, .07),
+		0 0 10px rgba(143, 124, 255, .10);
+	outline: none;
+}
+
+.inputbox:focus::placeholder,
+.inputbox2:focus::placeholder {
+	color: #6f7882;
+}
+
+/* Form button styles
+---------------------------------------- */
+
+a.button1,
+input.button1,
+input.button3,
+a.button2,
+input.button2 {
+	color: #dce4ec;
+	background:
+		linear-gradient(
+			180deg,
+			#292e38 0%,
+			#17151f 100%
+		);
+	border: 1px solid rgba(128, 191, 255, .25);
+	box-shadow:
+		0 0 8px rgba(0, 0, 0, .15),
+		inset 0 0 8px rgba(128, 191, 255, .03);
+}
+
+/* Primaire knop */
+a.button1,
+input.button1 {
+	color: #ffc18a;
+	font-weight: 700;
+	border-color: rgba(159,140,255, .45);
+	background: linear-gradient(
+		180deg,
+		#292e38 0%,
+		#17151f 100%
+	);
+	box-shadow:
+		0 0 8px rgba(143, 124, 255, .10),
+		inset 0 0 8px rgba(159,140,255, .04);
+}
+a.button1:active,
+input.button1:active,
+a.button2:active,
+input.button2:active,
+input.button3:active {
+	transform: scale(.97);
+}
+
+/* Secundaire knoppen */
+a.button2,
+input.button2,
+input.button3 {
+	color: #dce4ec;
+	border-color: rgba(128, 191, 255, .25);
+}
+
+/* Button3 gebruikt geen achtergrondafbeelding */
+input.button3 {
+	background-image: none;
+}
+
+/* <a> buttons */
+a.button1 {
+	color: #ffc18a;
+}
+
+a.button2 {
+	color: #dce4ec;
+}
+
+/* Hover states */
+a.button1:hover,
+input.button1:hover {
+	color: #ffffff;
+	border-color: #b8adff;
+	background: linear-gradient(
+		180deg,
+		#303641 0%,
+		#191725 100%
+	);
+	box-shadow:
+		0 0 12px rgba(159,140,255, .25),
+		inset 0 0 8px rgba(159,140,255, .07);
+}
+
+a.button2:hover,
+input.button2:hover,
+input.button3:hover {
+	color: #ffc18a;
+	border-color: rgba(159,140,255, .55);
+	background: linear-gradient(
+		180deg,
+		#303641 0%,
+		#191725 100%
+	);
+}
+
+/* Focus states */
+input.button1:focus {
+	color: #ffffff;
+	border-color: #b8adff;
+	box-shadow:
+		0 0 0 2px rgba(159,140,255, .09),
+		0 0 12px rgba(159,140,255, .20);
+	outline: none;
+}
+
+input.button2:focus,
+input.button3:focus {
+	color: #ffc18a;
+	border-color: rgba(159,140,255, .55);
+	outline: none;
+}
+
+/* Disabled */
+input.disabled {
+	color: #808080;
+	border-color: #444;
+	background: #1b1e24;
+	box-shadow: none;
+	cursor: default;
+}
+
+/* =========================================================
+   MODERNE BESTANDSKIEZER
+   ========================================================= */
+
+input[type="file"] {
+	padding: 4px;
+	border: 1px solid rgba(128, 191, 255, .25);
+	border-radius: 7px;
+	background: #0d0c13;
+	color: #dce4ec;
+	cursor: pointer;
+	box-sizing: border-box;
+	transition:
+		border-color .2s ease,
+		box-shadow .2s ease,
+		background .2s ease;
+}
+
+input[type="file"]::file-selector-button {
+	margin-right: 10px;
+	padding: 5px 12px;
+	border: 1px solid rgba(159,140,255, .45);
+	border-radius: 6px;
+	background: linear-gradient(
+		180deg,
+		#292e38 0%,
+		#17151f 100%
+	);
+	color: #ffc18a;
+	font-family: inherit;
+	font-size: .92em;
+	font-weight: 700;
+	cursor: pointer;
+	box-shadow:
+		0 0 8px rgba(143, 124, 255, .10),
+		inset 0 0 8px rgba(159,140,255, .04);
+	transition:
+		color .2s ease,
+		border-color .2s ease,
+		background .2s ease,
+		box-shadow .2s ease;
+}
+
+input[type="file"]:hover {
+	border-color: rgba(159,140,255, .45);
+}
+
+input[type="file"]::file-selector-button:hover {
+	color: #ffffff;
+	border-color: #b8adff;
+	background: linear-gradient(
+		180deg,
+		#303641 0%,
+		#191725 100%
+	);
+	box-shadow:
+		0 0 12px rgba(159,140,255, .25),
+		inset 0 0 8px rgba(159,140,255, .07);
+}
+
+input[type="file"]:focus {
+	outline: none;
+	border-color: #b8adff;
+	background: #12161d;
+	box-shadow:
+		0 0 0 2px rgba(159,140,255, .09),
+		0 0 12px rgba(143, 124, 255, .12);
+}
+
+/* jQuery popups
+---------------------------------------- */
+.phpbb_alert {
+	background-color: #14131d;
+	border-color: #555;
+}
+.darken {
+	background-color: #000000;
+}
+
+.loading_indicator {
+	background-color: #000000;
+	background-image: url("./images/loading.gif");
+}
+
+.dropdown-extended ul li {
+	border-top-color: #b9b9b9;
+}
+
+.dropdown-extended ul li:hover {
+	background-color: #12101a;
+	color: #b9b9b9;
+}
+
+.dropdown-extended .header {
+	background: #38293a;
+	border-bottom-color: #4a3a4d;
+	color: #f4f6f8;
+}
+
+.dropdown-extended .footer {
+	border-top: 1px solid #3c374d;
+	color: #dce4ec;
+}
+
+.dropdown-extended .header .header_settings a {
+	color: #b8adff;
+}
+
+.dropdown-extended .header .header_settings a:hover {
+	color: #ffc18a;
+}
+
+/* Notificatie dropdown - duidelijke buitenrand */
+.dropdown-extended {
+	border-color: transparent !important;
+	box-shadow: none !important;
+}
+
+.dropdown-extended .dropdown-contents {
+	border: 1px solid rgba(143, 124, 255, .58) !important;
+	box-shadow:
+		0 14px 36px rgba(0, 0, 0, .55),
+		0 0 0 1px rgba(143, 124, 255, .06),
+		0 0 16px rgba(143, 124, 255, .16);
+}
+
+.dropdown .pointer {
+	border-color: #8f7cff transparent;
+}
+
+.dropdown .pointer-inner {
+	border-color: #14131d transparent;
+}
+
+.dropdown-extended .pointer-inner {
+	border-color: #14131d transparent;
+}
+
+.dropdown .dropdown-contents {
+	background: #14131d;
+	border-color: #3c374d;
+	box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.2);
+}
+
+.dropdown-up .dropdown-contents {
+	box-shadow: 1px 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.dropdown li,
+.dropdown li li {
+	border-color: #3c374d;
+}
+
+.dropdown li.separator {
+	border-color: #3c374d;
+}
+
+@media (max-width: 700px) {
+	.dropdown-extended .dropdown-contents {
+		border: 2px solid rgba(143, 124, 255, .72) !important;
+		border-radius: 8px !important;
+
+		box-shadow:
+			0 16px 40px rgba(0, 0, 0, .80),
+			0 0 0 1px rgba(159,140,255, .18),
+			0 0 22px rgba(143, 124, 255, .28) !important;
+
+		background: #14131d !important;
+	}
+}
+
+/* Notifications
+---------------------------------------- */
+
+.notification_list p.notification-time {
+	color: #4c5d77;
+}
+
+li.notification-reported strong,
+li.notification-disapproved strong {
+	color: #d31141;
+}
+
+.badge {
+	background-color: #12101a;
+	color: #8f7cff;
+}
+
+textarea {
+	background-color: #191725;
+	border-color: #555;
+}
+.header_settings a {
+	color: #000000;
+}
+
+/* =========================================================
+   Nexora Dark - Wie is er online
+   ========================================================= */
+
+.sp-viewonline-heading h2 {
+	margin-bottom: 4px;
+	color: #f2f4f7;
+	text-shadow: 0 0 10px rgba(143,124,255,.08);
+}
+
+.sp-viewonline-guests {
+	color: #aeb8c3;
+}
+
+.sp-viewonline-header {
+	align-items: center;
+	margin-bottom: 14px;
+}
+
+.sp-viewonline-card {
+	background:
+		radial-gradient(
+			circle at top left,
+			rgba(143, 124, 255,.07),
+			transparent 38%
+		),
+		linear-gradient(
+			180deg,
+			#14131d 0%,
+			#15131c 100%
+		);
+	border: 1px solid rgba(143, 124, 255,.38);
+	box-shadow:
+		0 0 24px rgba(143, 124, 255,.10),
+		inset 0 0 22px rgba(143, 124, 255,.025);
+}
+
+.sp-viewonline-table thead th {
+	padding: 10px 14px;
+	background:
+		linear-gradient(
+			180deg,
+			rgba(143,124,255,.10),
+			rgba(31,36,45,.88)
+		);
+	color: #cfd7e0;
+	border-bottom: 1px solid rgba(159,140,255,.24);
+	font-size: .9em;
+	letter-spacing: .4px;
+}
+
+.sp-viewonline-table thead th a {
+	color: #dce4ec;
+	text-decoration: none;
+}
+
+.sp-viewonline-table thead th a:hover {
+	color: #b8adff;
+	text-decoration: none;
+}
+
+.sp-viewonline-table tbody td {
+	padding: 14px;
+}
+
+.sp-viewonline-table tbody tr {
+	position: relative;
+	background: rgba(27,31,39,.70);
+}
+
+.sp-viewonline-table tbody tr:nth-child(even) {
+	background: rgba(23,27,34,.84);
+}
+
+.sp-viewonline-table tbody tr:hover {
+	background:
+		linear-gradient(
+			90deg,
+			rgba(143,124,255,.08),
+			rgba(128,191,255,.025)
+		);
+	box-shadow:
+		inset 3px 0 0 #b8adff,
+		inset 0 0 18px rgba(143, 124, 255,.025);
+}
+
+.sp-viewonline-table tbody tr + tr td {
+	border-top-color: rgba(125,242,183,.055);
+}
+
+.sp-viewonline-browser {
+	color: #9da8b4;
+}
+
+.sp-viewonline-ip {
+	color: #adb5c0;
+}
+
+.sp-viewonline-ip > span {
+	color: #8996a3;
+}
+
+.sp-viewonline-ip a {
+	color: #8f7cff;
+}
+
+.sp-viewonline-ip a:hover {
+	color: #b8adff;
+}
+
+.sp-viewonline-whois {
+	padding: 2px 6px;
+	border: 1px solid rgba(128,191,255,.18);
+	border-radius: 5px;
+	background: rgba(128,191,255,.035);
+	color: #a99cff !important;
+	font-size: .92em;
+	text-decoration: none !important;
+	transition:
+		color .18s ease,
+		border-color .18s ease,
+		background .18s ease,
+		box-shadow .18s ease;
+}
+
+.sp-viewonline-whois:hover {
+	color: #ffffff !important;
+	border-color: rgba(159,140,255,.45);
+	background: rgba(143,124,255,.08);
+	box-shadow:
+		0 0 7px rgba(143, 124, 255,.12);
+}
+
+.sp-viewonline-location a {
+	color: #8f7cff;
+	text-decoration: none;
+}
+
+.sp-viewonline-location a:hover {
+	color: #b8adff;
+}
+
+.sp-viewonline-updated {
+	color: #c4ccd5;
+}
+
+.sp-mobile-label {
+	color: #a99cff;
+}
+
+.sp-viewonline-pagination {
+	padding: 5px 9px;
+	border: 1px solid rgba(128,191,255,.10);
+	border-radius: 8px;
+	background: rgba(27,31,39,.34);
+	color: #aeb8c3;
+}
+
+.sp-viewonline-legend {
+	margin-top: 14px;
+	padding: 7px 12px;
+	border: 1px solid rgba(128,191,255,.12);
+	border-radius: 9px;
+	background: rgba(27,31,39,.58);
+	color: #aeb8c3;
+}
+
+.sp-viewonline-legend-label {
+	color: #dce4ec;
+	font-style: italic;
+}
+
+.sp-viewonline-empty {
+	color: #b9c5d0;
+}
+
+@media (max-width: 700px) {
+	.sp-viewonline-table tbody tr + tr {
+		border-top-color: rgba(143, 124, 255,.16);
+	}
+
+	.sp-viewonline-table tbody tr:hover {
+		box-shadow:
+			inset 3px 0 0 rgba(159,140,255,.55);
+	}
+}
+
+/* =========================================================
+   Nexora Dark - Ledenlijst
+   ========================================================= */
+
+.sp-memberlist-heading h2 {
+	color: #f2f4f7;
+	text-shadow:
+		0 0 14px rgba(143, 124, 255,.10);
+}
+
+.sp-memberlist-pagination {
+	border: 1px solid rgba(128,191,255,.10);
+	background: rgba(27,31,39,.34);
+	color: #aeb8c3;
+}
+
+.sp-memberlist-tools {
+	border: 1px solid rgba(128,191,255,.12);
+	background:
+		linear-gradient(
+			180deg,
+			rgba(31,36,45,.72),
+			rgba(23,27,34,.72)
+		);
+	box-shadow:
+		inset 0 0 14px rgba(128,191,255,.025);
+}
+
+.sp-memberlist-search-link a {
+	border: 1px solid rgba(159,140,255,.24);
+	background: rgba(143, 124, 255,.045);
+	color: #ffc18a;
+}
+
+.sp-memberlist-search-link a:hover {
+	border-color: rgba(159,140,255,.50);
+	background: rgba(143,124,255,.08);
+	color: #ffffff;
+	text-decoration: none;
+	box-shadow:
+		0 0 9px rgba(143, 124, 255,.10);
+}
+
+.sp-memberlist-letters a {
+	border: 1px solid rgba(128,191,255,.12);
+	background: rgba(128,191,255,.025);
+	color: #aeb8c3;
+}
+
+.sp-memberlist-letters a:hover {
+	border-color: rgba(159,140,255,.45);
+	background: rgba(143,124,255,.08);
+	color: #ffffff;
+	text-decoration: none;
+	box-shadow:
+		0 0 8px rgba(143, 124, 255,.10);
+	transform: translateY(-1px);
+}
+
+.sp-memberlist-card {
+	background:
+		radial-gradient(
+			circle at top left,
+			rgba(143, 124, 255,.07),
+			transparent 38%
+		),
+		linear-gradient(
+			180deg,
+			#14131d 0%,
+			#15131c 100%
+		);
+	border: 1px solid rgba(143, 124, 255,.38);
+	box-shadow:
+		0 0 24px rgba(143, 124, 255,.10),
+		inset 0 0 22px rgba(143, 124, 255,.025);
+}
+
+.sp-memberlist-table thead th {
+	background:
+		linear-gradient(
+			180deg,
+			rgba(143,124,255,.10),
+			rgba(31,36,45,.88)
+		);
+	color: #cfd7e0;
+	border-bottom: 1px solid rgba(159,140,255,.24);
+}
+
+.sp-memberlist-table thead th a {
+	color: #dce4ec;
+	text-decoration: none;
+}
+
+.sp-memberlist-table thead th a:hover {
+	color: #b8adff;
+	text-decoration: none;
+}
+
+.sp-memberlist-table tbody tr {
+	background: rgba(27,31,39,.70);
+}
+
+.sp-memberlist-table tbody tr:nth-child(even) {
+	background: rgba(23,27,34,.84);
+}
+
+.sp-memberlist-table tbody tr:hover {
+	background:
+		linear-gradient(
+			90deg,
+			rgba(143,124,255,.08),
+			rgba(128,191,255,.025)
+		);
+	box-shadow:
+		inset 3px 0 0 #b8adff,
+		inset 0 0 18px rgba(143, 124, 255,.025);
+}
+
+.sp-memberlist-table tbody tr + tr td {
+	border-top-color: rgba(125,242,183,.055);
+}
+
+.sp-memberlist-table .rank-img {
+	color: #9da8b4;
+}
+
+.sp-memberlist-table td.posts,
+.sp-memberlist-table td.joined,
+.sp-memberlist-table td.active,
+.sp-memberlist-table td.info {
+	color: #b9c5d0;
+}
+
+.sp-memberlist-table td.info {
+	font-size: .94em;
+	line-height: 1.35;
+}
+
+.sp-memberlist-table td.info > div {
+	margin: 1px 0;
+}
+
+.sp-memberlist-table td.info a {
+	color: #8f7cff;
+	text-decoration: none;
+}
+
+.sp-memberlist-table td.info a:hover {
+	color: #b8adff;
+	text-decoration: none;
+}
+
+.sp-memberlist-table td:not(.sp-memberlist-user)::before {
+	color: #a99cff;
+}
+
+.sp-memberlist-table tr.inactive {
+	opacity: .58;
+}
+
+@media (max-width: 700px) {
+	.sp-memberlist-table tbody tr + tr {
+		border-top-color: rgba(143, 124, 255,.16);
+	}
+	
+	.sp-memberlist-table tbody tr {
+		background: #201d2b;
+	}
+
+	.sp-memberlist-table tbody tr:nth-child(even) {
+		background: #151a21;
+	}
+
+	.sp-memberlist-table tbody tr + tr {
+		border-top-color: rgba(143, 124, 255,.20);
+	}
+}
+
+/* =========================================================
+   Nexora Dark - Gebruikersprofiel
+   ========================================================= */
+   
+.sp-profile-view .onliness {
+	color: #008000 !important;
+	font-size: .85em !important;
+	font-weight: 600 !important;
+	opacity: 1 !important;
+}
+
+.sp-profile-view .offliness {
+	color: #FF0000 !important;
+	font-size: .85em !important;
+	font-weight: 600 !important;
+	opacity: 1 !important;
+}
+
+.sp-profile-header h2 {
+	color: #f2f4f7;
+	text-shadow:
+		0 0 14px rgba(143, 124, 255,.10);
+}
+
+.sp-profile-hero {
+	border: 1px solid rgba(143, 124, 255,.38);
+	background:
+		radial-gradient(
+			circle at top left,
+			rgba(143,124,255,.08),
+			transparent 42%
+		),
+		linear-gradient(
+			180deg,
+			#14131d 0%,
+			#15131c 100%
+		);
+	box-shadow:
+		0 0 24px rgba(143, 124, 255,.10),
+		inset 0 0 22px rgba(143, 124, 255,.025);
+}
+
+.sp-profile-avatar img {
+	border: 1px solid rgba(159,140,255,.30);
+	background: #0d0c13;
+	box-shadow:
+		0 0 16px rgba(143, 124, 255,.10);
+}
+
+.sp-profile-rank {
+	color: #9da8b4;
+}
+
+.sp-profile-username {
+	color: #f2f4f7;
+}
+
+.sp-profile-actions a,
+.sp-profile-zebra a {
+	border: 1px solid rgba(128,191,255,.18);
+	background: rgba(128,191,255,.035);
+	color: #a99cff;
+}
+
+.sp-profile-actions a:hover,
+.sp-profile-zebra a:hover {
+	border-color: rgba(159,140,255,.45);
+	background: rgba(143,124,255,.08);
+	color: #ffffff;
+	text-decoration: none;
+	box-shadow:
+		0 0 9px rgba(143, 124, 255,.12);
+}
+
+.sp-profile-details dt,
+.sp-profile-card-details dt {
+	color: #aeb8c3;
+}
+
+.sp-profile-details dd,
+.sp-profile-card-details dd {
+	color: #dce4ec;
+}
+
+.sp-profile-details dt,
+.sp-profile-details dd {
+	border-bottom: 1px solid rgba(128,191,255,.07);
+}
+
+.sp-profile-card {
+	border: 1px solid rgba(128,191,255,.15);
+	background:
+		linear-gradient(
+			180deg,
+			#14131d 0%,
+			#15131c 100%
+		);
+	box-shadow:
+		0 0 18px rgba(0,0,0,.18),
+		inset 0 0 16px rgba(128,191,255,.018);
+}
+
+.sp-profile-card h3 {
+	border-bottom: 1px solid rgba(159,140,255,.20);
+	background:
+		linear-gradient(
+			180deg,
+			rgba(143, 124, 255,.10),
+			rgba(31,36,45,.55)
+		);
+	color: #ffc18a;
+}
+
+.sp-profile-card-details dt,
+.sp-profile-card-details dd {
+	border-bottom: 1px solid rgba(128,191,255,.065);
+}
+
+.sp-profile-card-details a {
+	color: #8f7cff;
+	text-decoration: none;
+}
+
+.sp-profile-card-details a:hover {
+	color: #b8adff;
+	text-decoration: none;
+}
+
+.sp-profile-signature .signature {
+	color: #cbd5df;
+}
+
+/* Notificatie- en PB-badges */
+.sp-message-icon .badge {
+	background: #c94b5f !important;
+	color: #ffffff !important;
+	border: 1px solid #e36a7d;
+	box-shadow:
+		0 0 0 2px #14131d,
+		0 2px 6px rgba(201, 75, 95, .35);
+	opacity: 1;
+}
+
+/* Formulier velden
+----------------------------------------*/
+input[type="number"],
+select {
+	background-color: #14131d;
+	color: #dce4ec;
+	border: 1px solid #4a5563;
+}
+
+input[type="number"]:hover,
+select:hover {
+	border-color: #6b7a8b;
+}
+
+input[type="number"]:focus,
+select:focus {
+	background-color: #201d2b;
+	color: #ffffff;
+	border-color: #8f7cff;
+	outline: none;
+	box-shadow: 0 0 0 2px rgba(143, 124, 255, .12);
+}
+
+input[type="number"]:disabled {
+	background-color: #17151f !important;
+	color: #7f8994 !important;
+	border-color: #39414c !important;
+	opacity: 1;
+}
+
+/* =========================================================
+   Nexora Dark - Formulierkleuren
+   ========================================================= */
+
+/* Selects en keuzelijsten */
+select,
+select option,
+select optgroup {
+	background-color: #14131d;
+	color: #dce4ec;
+}
+
+/* Gewone invoervelden */
+input.inputbox,
+textarea.inputbox,
+textarea.inputbox2 {
+	background-color: #14131d;
+	color: #dce4ec;
+	border-color: #4a5563;
+}
+
+/* Hover */
+input.inputbox:hover,
+textarea.inputbox:hover,
+textarea.inputbox2:hover,
+select:hover {
+	border-color: #6b7a8b;
+}
+
+/* Focus */
+input.inputbox:focus,
+textarea.inputbox:focus,
+textarea.inputbox2:focus,
+select:focus {
+	background-color: #201d2b;
+	color: #ffffff;
+	border-color: #8f7cff;
+	box-shadow: 0 0 0 2px rgba(143, 124, 255, .12);
+}
+
+/* Placeholdertekst */
+input::placeholder,
+textarea::placeholder {
+	color: #7f8994;
+	opacity: 1;
+}
+
+/* Disabled velden */
+input:disabled,
+textarea:disabled,
+select:disabled {
+	background-color: #17151f !important;
+	color: #7f8994 !important;
+	border-color: #39414c !important;
+	opacity: 1;
+}
+
+/* Read-only velden */
+input[readonly],
+textarea[readonly] {
+	background-color: #17151f;
+	color: #9aa5b1;
+	border-color: #39414c;
+}
+
+/* Number input */
+input[type="number"] {
+	background-color: #14131d;
+	color: #dce4ec;
+	border-color: #4a5563;
+}
+
+/* Zoekveld */
+input[type="search"] {
+	background-color: #14131d;
+	color: #dce4ec;
+}
+
+/* Browser autofill */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+	-webkit-text-fill-color: #dce4ec;
+	-webkit-box-shadow: 0 0 0 1000px #14131d inset;
+	caret-color: #dce4ec;
+}
+
+/* Cookie banner - Nexora Dark */
+.cc-window.cc-banner {
+	background: #12101a !important;
+	color: #dce4ec !important;
+	border-top: 1px solid rgba(143, 124, 255, .45) !important;
+	box-shadow:
+		0 -4px 18px rgba(0, 0, 0, .35),
+		0 0 12px rgba(143, 124, 255, .06) !important;
+}
+
+/* Tekst */
+.cc-window .cc-message {
+	color: #dce4ec !important;
+}
+
+/* Meer informatie */
+.cc-window .cc-link {
+	color: #8f7cff !important;
+	opacity: 1 !important;
+}
+
+.cc-window .cc-link:hover {
+	color: #b8adff !important;
+}
+
+/* Begrepen-knop */
+.cc-window .cc-btn {
+	background: #201d2b !important;
+	color: #ffc18a !important;
+	border: 1px solid rgba(143, 124, 255, .55) !important;
+	border-radius: 7px !important;
+	font-weight: 700 !important;
+	text-decoration: none !important;
+	transition:
+		background .18s ease,
+		border-color .18s ease,
+		color .18s ease,
+		box-shadow .18s ease;
+}
+
+.cc-window .cc-btn:hover,
+.cc-window .cc-btn:focus {
+	background: #252a34 !important;
+	color: #ffffff !important;
+	border-color: #8f7cff !important;
+	box-shadow: 0 0 10px rgba(143, 124, 255, .18) !important;
+}
+
+/* Unread forums - Nexora Dark
+---------------------------------------- */
+.forum_unread a.forumtitle,
+.forum_unread_locked a.forumtitle,
+.forum_unread_subforum a.forumtitle {
+	color: #a995ff;
+	text-shadow: 0 0 10px rgba(169, 149, 255, .16);
+}
+
+.forum_unread a.forumtitle:hover,
+.forum_unread_locked a.forumtitle:hover,
+.forum_unread_subforum a.forumtitle:hover {
+	color: #c4b9ff;
+	text-shadow: 0 0 12px rgba(169, 149, 255, .28);
+}
+
+.forum_unread a.forumtitle::after,
+.forum_unread_locked a.forumtitle::after,
+.forum_unread_subforum a.forumtitle::after {
+	content: "";
+	display: inline-block;
+	width: 6px;
+	height: 6px;
+	margin-left: 7px;
+	margin-bottom: 2px;
+	border-radius: 50%;
+	background: #a995ff;
+	box-shadow:
+		0 0 0 2px rgba(169, 149, 255, .10),
+		0 0 8px rgba(169, 149, 255, .55);
+}

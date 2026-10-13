@@ -1,0 +1,50 @@
+{#
+ * Nexora Dark style for phpBB.
+ *
+ * @copyright (c) 2026 Spiderpiggy
+ * @copyright (c) phpBB Limited
+ * @license GNU General Public License, version 2 (GPL-2.0-only)
+ #}
+<!-- INCLUDE overall_header.html -->
+
+<div class="sp-faq-page">
+  <div class="sp-faq-hero">
+    <h2>{L_FAQ_TITLE}</h2>
+  </div>
+
+  <div class="sp-faq-index" id="faqlinks">
+    <div class="sp-faq-index-grid">
+      <!-- BEGIN faq_block -->
+        <dl class="faq">
+          <dt><strong>{faq_block.BLOCK_TITLE}</strong></dt>
+          <!-- BEGIN faq_row -->
+            <dd><a href="#f{faq_block.S_ROW_COUNT}r{faq_block.faq_row.S_ROW_COUNT}">{faq_block.faq_row.FAQ_QUESTION}</a></dd>
+          <!-- END faq_row -->
+        </dl>
+      <!-- END faq_block -->
+    </div>
+  </div>
+
+  <!-- BEGIN faq_block -->
+    <section class="sp-faq-section">
+      <h2 class="sp-faq-section-title">{faq_block.BLOCK_TITLE}</h2>
+      <div class="sp-faq-list">
+        <!-- BEGIN faq_row -->
+          <dl class="faq sp-faq-item">
+            <dt id="f{faq_block.S_ROW_COUNT}r{faq_block.faq_row.S_ROW_COUNT}"><strong>{faq_block.faq_row.FAQ_QUESTION}</strong></dt>
+            <dd>{faq_block.faq_row.FAQ_ANSWER}</dd>
+          </dl>
+          <div class="sp-faq-top">
+            <a href="#faqlinks"><i class="icon fa-chevron-circle-up fa-fw" aria-hidden="true"></i><span>{L_BACK_TO_TOP}</span></a>
+          </div>
+        <!-- END faq_row -->
+      </div>
+    </section>
+  <!-- END faq_block -->
+
+  <div class="sp-faq-jumpbox">
+    <!-- INCLUDE jumpbox.html -->
+  </div>
+</div>
+
+<!-- INCLUDE overall_footer.html -->

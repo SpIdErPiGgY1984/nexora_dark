@@ -1,0 +1,1897 @@
+/**
+ * Nexora Dark visual layer for phpBB.
+ *
+ * @copyright (c) 2026 Spiderpiggy
+ * @license GNU General Public License, version 2 (GPL-2.0-only)
+ *
+ * Decorative overrides only. Core sizing and typography intentionally
+ * follow the Lucid Lime/prosilver base used by Nexora Dark.
+ */
+html, body { color-scheme: dark; }
+.navbar, .panel, .post {
+    border-color: rgba(157,145,205,.13);
+    box-shadow: 0 3px 14px rgba(0,0,0,.15);
+}
+li.row:hover, table.table1 tbody tr:hover, table.table1 tbody tr.hover { background-color: rgba(143,124,255,.055); }
+.button, .button1, .button2, input.button1, input.button2, a.button1, a.button2 {
+    border-color: rgba(143,124,255,.32);
+    background-color: #211d31;
+    background-image: linear-gradient(to bottom, rgba(143,124,255,.10), rgba(143,124,255,.015));
+    color: #eeeaff;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,.035), 0 2px 7px rgba(0,0,0,.18);
+}
+.button:hover, .button1:hover, .button2:hover, input.button1:hover, input.button2:hover, a.button1:hover, a.button2:hover {
+    border-color: rgba(255,184,107,.60); background-color: #2b2438; color: #fff7ed;
+}
+.inputbox, select, textarea { background-color: #0e0c15; border-color: rgba(157,145,205,.20); color: #e5e1ec; }
+.inputbox:focus, select:focus, textarea:focus { border-color: rgba(143,124,255,.65); box-shadow: 0 0 0 1px rgba(143,124,255,.12); }
+.dropdown, .dropdown-extended ul, .dropdown-extended .header, .dropdown-extended .footer { background-color: #15121e; }
+blockquote, .codebox { border-color: rgba(143,124,255,.16); background-color: rgba(8,7,12,.62); }
+/* Standard phpBB WHOIS function, styled to match Nexora */
+.sp-viewonline-whois-separator {
+    opacity: .55;
+    margin: 0 .28em;
+}
+/* =========================================================
+   Nexora Dark: content refinements
+   Refined visual system for profile, member/team lists
+   and viewtopic.
+   IMPORTANT: decorative layer only. No typography, spacing,
+   widths or phpBB template functionality are changed.
+   ========================================================= */
+
+:root {
+    --nexora-bg-deep: #0c0b12;
+    --nexora-line: rgba(168, 153, 215, .16);
+    --nexora-border: rgba(157, 145, 205, .18);
+    --nexora-text: #e8e5ef;
+    --nexora-muted: #aaa4b7;
+    --nexora-accent: #8f7cff;
+    --nexora-accent-bright: #b7aaff;
+    --nexora-accent-soft: rgba(143, 124, 255, .11);
+    --nexora-secondary: #ffb86b;
+    --nexora-success: #62d4a5;
+    --nexora-danger: #ef7186;
+}
+
+/* ---------- Viewtopic ---------- */
+
+.post:not(.pm) {
+    background:
+        linear-gradient(135deg, rgba(143,124,255,.012), transparent 28%),
+        linear-gradient(180deg, #12161c 0%, #0c1015 100%);
+    border-color: var(--nexora-line);
+    border-top: 1px solid rgba(143,124,255,.22);
+    border-bottom: 1px solid rgba(0,0,0,.65);
+    box-shadow:
+        inset 3px 0 0 rgba(143,124,255,.22),
+        0 5px 18px rgba(0,0,0,.22);
+}
+
+.post:not(.pm).bg2 {
+    background:
+        linear-gradient(90deg, rgba(255,184,107,.012), transparent 20%),
+        linear-gradient(180deg, #101419 0%, #0a0e12 100%);
+    border-top-color: rgba(255,184,107,.16);
+    box-shadow:
+        inset 3px 0 0 rgba(255,184,107,.16),
+        0 5px 18px rgba(0,0,0,.24);
+}
+
+.post:not(.pm):hover {
+    border-color: rgba(143,124,255,.23);
+}
+
+.post.unreadpost:not(.pm) {
+    border-top-color: rgba(143,124,255,.48);
+    box-shadow:
+        inset 4px 0 0 var(--nexora-accent),
+        0 5px 19px rgba(0,0,0,.24);
+}
+
+.post.reported:not(.pm) {
+    border-top-color: rgba(239,113,134,.46);
+    box-shadow:
+        inset 4px 0 0 var(--nexora-danger),
+        0 5px 19px rgba(0,0,0,.24);
+}
+
+.post.deleted:not(.pm) {
+    opacity: .76;
+}
+
+.postprofile {
+    border-color: rgba(168,153,215,.13);
+    color: var(--nexora-muted);
+}
+
+.postprofile dt,
+.postprofile dd {
+    color: var(--nexora-muted);
+}
+
+.postprofile strong {
+    color: #d8d3e2;
+}
+
+.postprofile .avatar img {
+    border-color: rgba(143,124,255,.30);
+    background: var(--nexora-bg-deep);
+    box-shadow:
+        0 0 0 1px rgba(255,255,255,.018),
+        0 5px 16px rgba(0,0,0,.25),
+        0 0 18px rgba(143,124,255,.07);
+}
+
+.postprofile .profile-rank {
+    color: #9d96aa;
+}
+
+.postbody h3 a {
+    color: #efecf7;
+    text-shadow: 0 0 16px rgba(143,124,255,.07);
+}
+
+.postbody h3 a:hover {
+    color: var(--nexora-accent-bright);
+}
+
+.post:not(.pm) .postbody p.author {
+    color: #938da0;
+    border-color: rgba(168,153,215,.10);
+}
+
+.post:not(.pm) .postbody p.author a {
+    color: #b8b1c5;
+}
+
+.post:not(.pm) .postbody p.author a:hover {
+    color: var(--nexora-secondary);
+}
+
+.postbody .content {
+    color: var(--nexora-text);
+}
+
+.post-buttons .button {
+    background: rgba(143,124,255,.045);
+    border-color: rgba(143,124,255,.18);
+    color: #aaa2bb;
+    box-shadow: none;
+}
+
+.post-buttons .button:hover {
+    background: var(--nexora-accent-soft);
+    border-color: rgba(143,124,255,.42);
+    color: #f4f1fb;
+    box-shadow: 0 0 10px rgba(143,124,255,.08);
+}
+
+.signature {
+    border-color: rgba(168,153,215,.12);
+    color: #aaa4b5;
+}
+
+blockquote {
+    background:
+        linear-gradient(90deg, rgba(143,124,255,.055), rgba(12,11,18,.60));
+    border-color: rgba(143,124,255,.22);
+    box-shadow: inset 3px 0 0 rgba(143,124,255,.38);
+}
+
+blockquote cite {
+    color: #c8c1d8;
+}
+
+blockquote cite a {
+    color: var(--nexora-accent-bright);
+}
+
+.codebox {
+    background: #0b0a10;
+    border-color: rgba(255,184,107,.20);
+    box-shadow: inset 3px 0 0 rgba(255,184,107,.40);
+}
+
+.codebox p {
+    border-color: rgba(255,184,107,.12);
+    color: #d9c4aa;
+}
+
+.codebox code {
+    color: #d8d2e0;
+}
+
+.attachbox {
+    background:
+        linear-gradient(180deg, rgba(255,184,107,.045), rgba(17,16,25,.74));
+    border-color: rgba(255,184,107,.19);
+}
+
+.attachbox dt {
+    color: #f0d0aa;
+}
+
+.attachbox dd {
+    border-color: rgba(255,184,107,.10);
+}
+
+.polls .pollbar1,
+.polls .pollbar2,
+.polls .pollbar3,
+.polls .pollbar4,
+.polls .pollbar5 {
+    background: linear-gradient(90deg, #6d5ed0, #9b87ff);
+    border-color: rgba(183,170,255,.35);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,.10);
+}
+
+/* ---------- Profile ---------- */
+
+.sp-profile-header h2 {
+    color: #f1eef7;
+    text-shadow: 0 0 18px rgba(143,124,255,.10);
+}
+
+.sp-profile-hero {
+    border-color: rgba(143,124,255,.25);
+    background:
+        radial-gradient(circle at 10% 0%, rgba(143,124,255,.105), transparent 34%),
+        radial-gradient(circle at 92% 15%, rgba(255,184,107,.035), transparent 30%),
+        linear-gradient(180deg, #171521 0%, #121019 100%);
+    box-shadow:
+        0 5px 20px rgba(0,0,0,.20),
+        inset 0 1px 0 rgba(255,255,255,.025);
+}
+
+.sp-profile-hero.online {
+    border-color: rgba(98,212,165,.28);
+    box-shadow:
+        inset 3px 0 0 rgba(98,212,165,.72),
+        0 5px 20px rgba(0,0,0,.20);
+}
+
+.sp-profile-avatar img {
+    border-color: rgba(143,124,255,.34);
+    background: var(--nexora-bg-deep);
+    box-shadow:
+        0 0 0 1px rgba(255,255,255,.02),
+        0 6px 18px rgba(0,0,0,.27),
+        0 0 20px rgba(143,124,255,.08);
+}
+
+.sp-profile-username {
+    color: #f2eff8;
+    text-shadow: 0 0 15px rgba(143,124,255,.08);
+}
+
+.sp-profile-actions a,
+.sp-profile-zebra a {
+    background: rgba(143,124,255,.045);
+    border-color: rgba(143,124,255,.20);
+    color: #c6bcff;
+}
+
+.sp-profile-actions a:hover,
+.sp-profile-zebra a:hover {
+    background: rgba(143,124,255,.12);
+    border-color: rgba(143,124,255,.43);
+    color: #ffffff;
+    box-shadow: 0 0 11px rgba(143,124,255,.09);
+}
+
+.sp-profile-details dt,
+.sp-profile-card-details dt {
+    color: #9f99ac;
+}
+
+.sp-profile-details dd,
+.sp-profile-card-details dd {
+    color: #ded9e7;
+}
+
+.sp-profile-details dt,
+.sp-profile-details dd,
+.sp-profile-card-details dt,
+.sp-profile-card-details dd {
+    border-color: rgba(168,153,215,.085);
+}
+
+.sp-profile-card {
+    border-color: rgba(168,153,215,.15);
+    background:
+        linear-gradient(180deg, rgba(143,124,255,.025), transparent 30%),
+        linear-gradient(180deg, #171521 0%, #121019 100%);
+    box-shadow:
+        0 4px 16px rgba(0,0,0,.15),
+        inset 0 1px 0 rgba(255,255,255,.018);
+}
+
+.sp-profile-card h3 {
+    background:
+        linear-gradient(90deg, rgba(143,124,255,.105), rgba(255,184,107,.025));
+    border-color: rgba(143,124,255,.18);
+    color: #d9d1ff;
+}
+
+.sp-profile-card:nth-child(even) h3 {
+    background:
+        linear-gradient(90deg, rgba(255,184,107,.085), rgba(143,124,255,.025));
+    color: #f0c89c;
+}
+
+.sp-profile-card-details a {
+    color: var(--nexora-accent-bright);
+}
+
+.sp-profile-card-details a:hover {
+    color: var(--nexora-secondary);
+}
+
+.sp-profile-signature .signature {
+    color: #aaa4b5;
+}
+
+/* ---------- Member list + Team/group list ---------- */
+
+.sp-memberlist-heading h2,
+.group-title {
+    color: #f0edf7;
+    text-shadow: 0 0 17px rgba(143,124,255,.09);
+}
+
+.group-description {
+    color: #aaa4b6;
+}
+
+.sp-memberlist-pagination {
+    background: rgba(19,17,28,.68);
+    border-color: rgba(168,153,215,.13);
+    color: #a7a1b2;
+}
+
+.sp-memberlist-tools {
+    background:
+        linear-gradient(180deg, rgba(29,26,41,.82), rgba(18,16,25,.82));
+    border-color: rgba(168,153,215,.14);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,.018);
+}
+
+.sp-memberlist-search-link a {
+    background: rgba(255,184,107,.045);
+    border-color: rgba(255,184,107,.22);
+    color: #e8bd8c;
+}
+
+.sp-memberlist-search-link a:hover {
+    background: rgba(255,184,107,.095);
+    border-color: rgba(255,184,107,.42);
+    color: #fff2e3;
+    box-shadow: 0 0 10px rgba(255,184,107,.07);
+}
+
+.sp-memberlist-letters a {
+    background: rgba(143,124,255,.028);
+    border-color: rgba(143,124,255,.14);
+    color: #aaa3b8;
+}
+
+.sp-memberlist-letters a:hover {
+    background: rgba(143,124,255,.10);
+    border-color: rgba(143,124,255,.36);
+    color: #f0ecff;
+    box-shadow: 0 0 9px rgba(143,124,255,.07);
+}
+
+.sp-memberlist-card {
+    background:
+        radial-gradient(circle at 0% 0%, rgba(143,124,255,.075), transparent 32%),
+        linear-gradient(180deg, #171521 0%, #121019 100%);
+    border-color: rgba(143,124,255,.23);
+    box-shadow:
+        0 5px 19px rgba(0,0,0,.18),
+        inset 0 1px 0 rgba(255,255,255,.018);
+}
+
+.sp-memberlist-table thead th {
+    background:
+        linear-gradient(180deg, rgba(143,124,255,.095), rgba(23,21,33,.92));
+    border-color: rgba(143,124,255,.18);
+    color: #c8c2d2;
+}
+
+.sp-memberlist-table thead th a {
+    color: #dcd6e7;
+}
+
+.sp-memberlist-table thead th a:hover {
+    color: var(--nexora-accent-bright);
+}
+
+.sp-memberlist-table tbody tr,
+.sp-memberlist-table tbody tr:nth-child(even) {
+    background: rgba(21,19,30,.78);
+}
+
+.sp-memberlist-table tbody tr:nth-child(even) {
+    background: rgba(17,16,25,.88);
+}
+
+.sp-memberlist-table tbody tr:hover {
+    background:
+        linear-gradient(90deg, rgba(143,124,255,.085), rgba(255,184,107,.018));
+    box-shadow:
+        inset 3px 0 0 rgba(143,124,255,.70);
+}
+
+.sp-memberlist-table tbody tr + tr td {
+    border-color: rgba(168,153,215,.075);
+}
+
+.sp-memberlist-table .rank-img,
+.sp-memberlist-table td.posts,
+.sp-memberlist-table td.joined,
+.sp-memberlist-table td.active,
+.sp-memberlist-table td.info {
+    color: #aaa4b3;
+}
+
+.sp-memberlist-table td.info a {
+    color: #b8adff;
+}
+
+.sp-memberlist-table td.info a:hover {
+    color: var(--nexora-secondary);
+}
+
+.sp-memberlist-table td:not(.sp-memberlist-user)::before {
+    color: #8479a2;
+}
+
+/* Team/group pages rendered through memberlist_body */
+.sp-memberlist .group-title + .rightside a,
+.sp-memberlist .manage a {
+    color: var(--nexora-accent-bright);
+}
+
+.sp-memberlist .group-title + .rightside a:hover,
+.sp-memberlist .manage a:hover {
+    color: var(--nexora-secondary);
+}
+
+/* ---------- View online consistency ---------- */
+
+.sp-viewonline-table tbody tr:hover {
+    background:
+        linear-gradient(90deg, rgba(143,124,255,.075), rgba(255,184,107,.015));
+    box-shadow: inset 3px 0 0 rgba(143,124,255,.62);
+}
+
+.sp-viewonline-whois {
+    color: var(--nexora-accent-bright);
+    text-decoration: none;
+}
+
+.sp-viewonline-whois:hover {
+    color: var(--nexora-secondary);
+    text-decoration: underline;
+}
+
+/* ---------- Generic state polish ---------- */
+
+.pagination li a:hover,
+.pagination li.active span {
+    border-color: rgba(143,124,255,.42);
+    background: rgba(143,124,255,.12);
+    color: #f5f2ff;
+}
+
+.dropdown li:hover,
+.dropdown li:hover > a {
+    background-color: rgba(143,124,255,.075);
+}
+
+.notification_list .unread,
+.dropdown-extended .notification_list .unread {
+    background-color: rgba(143,124,255,.07);
+    box-shadow: inset 3px 0 0 rgba(143,124,255,.52);
+}
+
+.success {
+    color: var(--nexora-success);
+}
+
+
+/* =========================================================
+   Nexora Dark: post separation
+   Stronger visual separation between forum posts.
+   No sizing, typography or template structure changes.
+   ========================================================= */
+
+/* Distinct post cards */
+/* Alternating post tones */
+.post:not(.pm).bg1 {
+    background:
+        linear-gradient(90deg, rgba(143,124,255,.018), transparent 22%),
+        linear-gradient(180deg, #171b22 0%, #11161c 100%);
+}
+
+
+
+/* Keep unread/reported states stronger than normal alternating posts */
+
+
+
+
+/* Author side gets its own quiet surface */
+.post:not(.pm) .postprofile {
+    background: rgba(255,255,255,.012);
+    border-left-color: rgba(168,153,215,.15);
+}
+
+.post:not(.pm).bg2 .postprofile {
+    background: rgba(143,124,255,.018);
+}
+
+/* Slightly clearer message header line */
+.post:not(.pm) .postbody h3 {
+    border-bottom: 1px solid rgba(168,153,215,.10);
+}
+
+.post:not(.pm).bg2 .postbody h3 {
+    border-bottom-color: rgba(255,184,107,.085);
+}
+
+/* Clearer separation from one post to the next even on very dark screens */
+.post:not(.pm) + .post:not(.pm) {
+    margin-top: 2px;
+}
+
+
+/* =========================================================
+   Nexora Dark: interaction states
+   Interaction states:
+   violet/lavender = hover/focus
+   amber = active/current selection only
+   ========================================================= */
+
+/* UCP / MCP navigation tabs */
+.tabs .tab > a:hover,
+.tabs .tab > a:hover span,
+.tabs .tab > a:focus,
+.tabs .tab > a:focus span,
+.minitabs .tab > a:hover,
+.minitabs .tab > a:focus {
+    color: var(--nexora-accent-bright) !important;
+    background-color: rgba(143,124,255,.09) !important;
+    border-color: rgba(143,124,255,.28) !important;
+}
+
+.tabs .activetab > a,
+.tabs .activetab > a span,
+.minitabs .activetab > a {
+    color: var(--nexora-secondary) !important;
+    background-color: rgba(255,184,107,.07) !important;
+    border-color: rgba(255,184,107,.25) !important;
+}
+
+/* UCP/MCP side navigation */
+.navigation a:hover,
+.navigation a:focus {
+    color: var(--nexora-accent-bright) !important;
+    background-color: rgba(143,124,255,.085) !important;
+}
+
+.navigation .active-subsection a,
+.navigation .active-subsection a:hover {
+    color: var(--nexora-secondary) !important;
+    background-color: rgba(255,184,107,.065) !important;
+    border-color: rgba(255,184,107,.24) !important;
+}
+
+/* Form labels: hover/focus should never turn amber */
+fieldset.fields1 dl:hover dt label,
+fieldset.fields2 dl:hover dt label,
+fieldset dl:hover dt label,
+label:hover,
+label:focus-within {
+    color: var(--nexora-accent-bright) !important;
+}
+
+/* Selected/checked controls keep violet as their control state */
+input[type="radio"]:checked + label,
+input[type="checkbox"]:checked + label {
+    color: #ded9e7;
+}
+
+/* Links inside settings/forms: violet on hover */
+.panel a:hover,
+.panel a:focus,
+fieldset a:hover,
+fieldset a:focus {
+    color: var(--nexora-accent-bright);
+}
+
+/* Reserve amber for genuinely active/current emphasis */
+.tabs .activetab > a:hover,
+.tabs .activetab > a:focus,
+.navigation .active-subsection a:hover,
+.navigation .active-subsection a:focus {
+    color: var(--nexora-secondary) !important;
+}
+
+
+/* Nexora Dark palette audit: notification and popup borders */
+.dropdown,
+.dropdown-extended,
+.dropdown-extended .header,
+.dropdown-extended .footer,
+.dropdown-extended ul,
+.notification_list,
+.notification_list li,
+.dropdown-extended .notification_list li {
+    border-color: rgba(143,124,255,.20) !important;
+}
+
+.dropdown-extended .notification_list .unread,
+.notification_list .unread {
+    border-color: rgba(143,124,255,.28) !important;
+    box-shadow: inset 3px 0 0 rgba(143,124,255,.52);
+}
+
+.dropdown-extended .notification_list li:hover,
+.notification_list li:hover {
+    border-color: rgba(184,173,255,.30) !important;
+}
+
+.dropdown-extended .header {
+    border-bottom-color: rgba(143,124,255,.22) !important;
+}
+
+.dropdown-extended .footer {
+    border-top-color: rgba(143,124,255,.18) !important;
+}
+
+
+/* =========================================================
+   Nexora Dark 1.0.0 - final legacy-pink cleanup
+   Notification popup and index statistic panels.
+   ========================================================= */
+
+/* Notification dropdown: outer frame and all inner separators */
+.dropdown-extended,
+.dropdown-extended.notification_list,
+#notification_list,
+#notification_list .dropdown,
+#notification_list .dropdown-extended {
+    border-color: rgba(143,124,255,.42) !important;
+}
+
+.dropdown-extended:before,
+.dropdown-extended:after {
+    border-bottom-color: #8f7cff !important;
+}
+
+.dropdown-extended .header,
+.dropdown-extended .footer,
+.dropdown-extended ul,
+.dropdown-extended li,
+.dropdown-extended .notification_list,
+.dropdown-extended .notification_list li {
+    border-color: rgba(143,124,255,.20) !important;
+}
+
+.dropdown-extended .header,
+.dropdown-extended .footer {
+    background-color: #15121e;
+    box-shadow: none !important;
+}
+
+/* Index statistics / who-is-online / birthdays / statistics containers */
+.stat-block,
+.stat-block.online-list,
+.stat-block.birthday-list,
+.stat-block.statistics,
+.online-list,
+.birthday-list {
+    border-color: rgba(143,124,255,.24) !important;
+}
+
+.stat-block h3 .icon,
+.online-list h3 .icon,
+.birthday-list h3 .icon,
+.statistics h3 .icon,
+.stat-block h3 i,
+.online-list h3 i,
+.birthday-list h3 i {
+    color: var(--nexora-accent) !important;
+}
+
+/* Any custom Spiderpiggy index cards inherited by Nexora */
+.sp-stat-block,
+.sp-index-stat,
+.sp-index-stats,
+.sp-who-is-online,
+.sp-birthdays,
+.sp-statistics {
+    border-color: rgba(143,124,255,.24) !important;
+}
+
+.sp-stat-block h3,
+.sp-index-stat h3,
+.sp-index-stats h3,
+.sp-who-is-online h3,
+.sp-birthdays h3,
+.sp-statistics h3 {
+    color: var(--nexora-accent-bright) !important;
+    border-color: rgba(143,124,255,.20) !important;
+}
+
+
+/* =========================================================
+   Nexora Dark 1.0.0 - portrait notification border fix
+   Narrow/mobile phpBB notification dropdown only.
+   ========================================================= */
+@media (max-width: 700px) {
+    /* Outer notification popup */
+    #notification_list .dropdown,
+    #notification_list .dropdown-extended,
+    .dropdown-extended.notification_list,
+    .dropdown-extended {
+        border-color: rgba(143,124,255,.46) !important;
+        box-shadow:
+            0 0 0 1px rgba(143,124,255,.12),
+            0 8px 24px rgba(0,0,0,.30) !important;
+    }
+
+    /* Mobile pointer/arrow can carry its own border colour */
+    #notification_list .dropdown:before,
+    #notification_list .dropdown:after,
+    #notification_list .dropdown-extended:before,
+    #notification_list .dropdown-extended:after,
+    .dropdown-extended:before,
+    .dropdown-extended:after {
+        border-bottom-color: #8f7cff !important;
+        border-top-color: transparent !important;
+        border-left-color: transparent !important;
+        border-right-color: transparent !important;
+    }
+
+    /* Some compact layouts draw the frame on inner list/header/footer */
+    #notification_list .dropdown-extended .header,
+    #notification_list .dropdown-extended .footer,
+    #notification_list .dropdown-extended ul,
+    #notification_list .dropdown-extended li,
+    .dropdown-extended .header,
+    .dropdown-extended .footer,
+    .dropdown-extended ul,
+    .dropdown-extended li {
+        border-color: rgba(143,124,255,.22) !important;
+    }
+
+    /* Unread items */
+    #notification_list .unread,
+    .dropdown-extended .notification_list .unread {
+        border-color: rgba(143,124,255,.30) !important;
+        box-shadow: inset 3px 0 0 rgba(143,124,255,.55) !important;
+    }
+}
+
+
+/* Final notification frame guard.
+   The visible frame is drawn on .dropdown-contents, not the outer dropdown. */
+.dropdown-extended .dropdown-contents {
+    border-color: rgba(143,124,255,.58) !important;
+}
+
+@media (max-width: 700px) {
+    .dropdown-extended .dropdown-contents {
+        border: 2px solid rgba(143,124,255,.72) !important;
+        box-shadow:
+            0 16px 40px rgba(0,0,0,.80),
+            0 0 0 1px rgba(184,173,255,.15),
+            0 0 22px rgba(143,124,255,.18) !important;
+    }
+}
+
+
+/* =========================================================
+   Nexora Dark - forum/announcement header palette
+   One visual language for topic and announcement containers.
+   ========================================================= */
+
+/* Header strip: remove legacy cyan/magenta identity */
+.forabg > .inner > ul.topiclist:first-child,
+.forumbg > .inner > ul.topiclist:first-child,
+.forabg ul.topiclist li.header,
+.forumbg ul.topiclist li.header {
+    border-color: rgba(143,124,255,.32) !important;
+}
+
+/* Announcement/global announcement blocks use the same Nexora violet family.
+   Amber remains reserved for status accents/icons rather than container chrome. */
+.forumbg.announcement,
+.forumbg[class*="announce"],
+.forabg.announcement,
+.forabg[class*="announce"] {
+    border-color: rgba(143,124,255,.34) !important;
+    box-shadow:
+        inset 0 1px 0 rgba(184,173,255,.09),
+        0 0 0 1px rgba(143,124,255,.06) !important;
+}
+
+/* Keep the compact Lucid-derived dimensions untouched; only recolour chrome. */
+.forabg .header,
+.forumbg .header {
+    border-bottom-color: rgba(143,124,255,.34) !important;
+}
+
+
+/* =========================================================
+   Nexora Dark - restrained index depth
+   Depth on the OUTER panels only. Inner statistics sections
+   remain visually connected as one block.
+   ========================================================= */
+
+/* Forum category cards */
+.forabg,
+.forumbg {
+    background:
+        linear-gradient(180deg, rgba(255,255,255,.012), rgba(0,0,0,.025)),
+        #17151f !important;
+    border-color: rgba(143,124,255,.30) !important;
+    box-shadow:
+        0 7px 18px rgba(0,0,0,.22),
+        inset 0 1px 0 rgba(184,173,255,.07),
+        inset 0 -1px 0 rgba(0,0,0,.28) !important;
+}
+
+.forabg li.header,
+.forumbg li.header {
+    background:
+        linear-gradient(180deg, rgba(143,124,255,.085), rgba(143,124,255,.025)) !important;
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.025),
+        0 1px 2px rgba(0,0,0,.18) !important;
+}
+
+ul.topiclist.forums > li.row {
+    background: linear-gradient(90deg, rgba(143,124,255,.018), rgba(0,0,0,.025)) !important;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,.012) !important;
+}
+
+ul.topiclist.forums > li.row:hover {
+    background: linear-gradient(90deg, rgba(143,124,255,.065), rgba(0,0,0,.015)) !important;
+    box-shadow:
+        inset 3px 0 0 rgba(143,124,255,.50),
+        inset 0 1px 0 rgba(184,173,255,.035) !important;
+}
+
+/* Statistics is ONE card. Do not turn each subsection into a separate card. */
+.stat-block {
+    background:
+        linear-gradient(180deg, rgba(255,255,255,.014), rgba(0,0,0,.025)),
+        #1a1d25 !important;
+    border-color: rgba(143,124,255,.27) !important;
+    box-shadow:
+        0 9px 22px rgba(0,0,0,.24),
+        inset 0 1px 0 rgba(184,173,255,.065),
+        inset 0 -1px 0 rgba(0,0,0,.26) !important;
+}
+
+/* Restore the natural connected inner sections */
+.stat-block .online-list,
+.stat-block .birthday-list,
+.stat-block .statistics,
+.stat-block .sp-stat-block,
+.stat-block .sp-index-stat,
+.stat-block .sp-index-stats,
+.online-list,
+.birthday-list,
+.statistics {
+    box-shadow: none !important;
+}
+
+/* Headers get only a soft highlight, not a raised mini-card */
+.stat-block h3,
+.online-list h3,
+.birthday-list h3,
+.statistics h3 {
+    color: var(--nexora-accent-bright) !important;
+    background: linear-gradient(180deg, rgba(143,124,255,.035), rgba(143,124,255,.008)) !important;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,.012) !important;
+    border-bottom-color: rgba(143,124,255,.18) !important;
+}
+
+/* Preserve original internal separators */
+.stat-block hr,
+.stat-block .sp-stat-separator {
+    border-color: rgba(143,124,255,.15) !important;
+}
+
+@media (max-width: 700px) {
+    .forabg,
+    .forumbg,
+    .stat-block {
+        box-shadow:
+            0 5px 12px rgba(0,0,0,.21),
+            inset 0 1px 0 rgba(184,173,255,.055),
+            inset 0 -1px 0 rgba(0,0,0,.24) !important;
+    }
+}
+
+
+/* =========================================================
+   Nexora Dark - final header depth
+   Subtle dimensional treatment, no size/layout changes.
+   ========================================================= */
+
+.headerbar {
+    position: relative;
+    overflow: hidden;
+    background:
+        radial-gradient(circle at 18% 15%,
+            rgba(143,124,255,.085) 0%,
+            rgba(143,124,255,.025) 22%,
+            transparent 45%),
+        linear-gradient(180deg,
+            rgba(255,255,255,.020) 0%,
+            rgba(255,255,255,.004) 45%,
+            rgba(0,0,0,.055) 100%),
+        #171720 !important;
+    border: 1px solid rgba(143,124,255,.18) !important;
+    box-shadow:
+        0 12px 28px rgba(0,0,0,.26),
+        0 3px 8px rgba(0,0,0,.16),
+        inset 0 1px 0 rgba(184,173,255,.075),
+        inset 0 -1px 0 rgba(0,0,0,.30) !important;
+}
+
+/* Very soft top sheen */
+.headerbar:before {
+    content: "";
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    left: 2%;
+    right: 2%;
+    height: 1px;
+    pointer-events: none;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(184,173,255,.10) 20%,
+        rgba(143,124,255,.22) 50%,
+        rgba(184,173,255,.08) 80%,
+        transparent
+    );
+}
+
+/* Keep actual header content above decorative layer */
+.headerbar > .inner {
+    position: relative;
+    z-index: 1;
+}
+
+/* Logo receives only a natural shadow, not a glow cloud */
+.site_logo,
+.site-logo {
+    filter: drop-shadow(0 4px 7px rgba(0,0,0,.42));
+}
+
+/* Search field becomes a slightly raised control */
+.search-header {
+    box-shadow:
+        0 5px 12px rgba(0,0,0,.28),
+        0 0 12px rgba(143,124,255,.10),
+        inset 0 1px 0 rgba(184,173,255,.055) !important;
+}
+
+/* Site title gets a tiny grounding shadow */
+.site-description h1 {
+    text-shadow:
+        0 2px 3px rgba(0,0,0,.48),
+        0 0 12px rgba(143,124,255,.035);
+}
+
+@media (max-width: 700px) {
+    .headerbar {
+        box-shadow:
+            0 7px 16px rgba(0,0,0,.23),
+            inset 0 1px 0 rgba(184,173,255,.06),
+            inset 0 -1px 0 rgba(0,0,0,.27) !important;
+    }
+}
+
+/* =========================================================
+   Posting editor - font size selector
+   ========================================================= */
+
+.format-buttons .bbcode-size-wrapper {
+	position: relative;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 30px;
+	height: auto;
+	min-width: 0;
+	padding: 4px 3px;
+	margin: 0;
+	box-sizing: border-box;
+	vertical-align: middle;
+}
+
+.format-buttons .bbcode-size-wrapper:hover {
+	background-color: #303746;
+	border-color: rgba(128, 191, 255, .60);
+	color: #ffffff;
+}
+
+.format-buttons .bbcode-size-wrapper > .icon {
+	margin: 0;
+	padding: 0;
+	font-size: 14px;
+	line-height: 1;
+	pointer-events: none;
+}
+
+.format-buttons .bbcode-size-wrapper > .icon::before {
+	padding: 0;
+}
+
+/* Transparante native select boven het icoon */
+.format-buttons .bbcode-size-wrapper .bbcode-size {
+	position: absolute;
+	inset: 0;
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	opacity: 0;
+	cursor: pointer;
+}
+
+/* Toetsenbordfocus */
+.format-buttons .bbcode-size-wrapper:focus-within {
+	border-color: rgba(230,106,164,.70);
+	box-shadow:
+		0 0 0 1px rgba(230,106,164,.16),
+		inset 0 1px 0 rgba(255,255,255,.04);
+}
+
+/* Statistics, online users and permissions: complete borders and inset content. */
+.stat-block {
+    box-sizing: border-box;
+    border: 1px solid rgba(143,124,255,.27);
+    border-radius: 8px;
+    margin: 16px 0;
+    padding: 12px 16px;
+}
+.stat-block > h3:first-child {
+    margin: -12px -16px 12px;
+    padding: 9px 16px;
+    border-radius: 7px 7px 0 0;
+}
+.stat-block > p {
+    margin: 0;
+    padding: 0;
+    line-height: 1.55;
+    overflow-wrap: anywhere;
+}
+.sp-index-stats .stat-block {
+    margin: 12px 0;
+    padding: 12px 16px;
+}
+.sp-index-stats .stat-block > h3:first-child {
+    margin: -12px -16px 12px;
+    padding: 9px 16px;
+}
+.sp-index-stats .stat-block > p {
+    padding: 0;
+}
+@media (max-width: 700px) {
+    .stat-block,
+    .sp-index-stats .stat-block {
+        padding: 10px 12px;
+    }
+    .stat-block > h3:first-child,
+    .sp-index-stats .stat-block > h3:first-child {
+        margin: -10px -12px 10px;
+        padding: 8px 12px;
+    }
+}
+
+/* Extension sections: only the first heading touches the top edge. */
+.stat-block > h3:not(:first-child),
+.sp-index-stats .stat-block > h3:not(:first-child) {
+    margin: 16px -16px 12px;
+    padding: 9px 16px;
+    border-top: 1px solid rgba(143,124,255,.27);
+    border-radius: 0;
+}
+@media (max-width: 700px) {
+    .stat-block > h3:not(:first-child),
+    .sp-index-stats .stat-block > h3:not(:first-child) {
+        margin: 14px -12px 10px;
+        padding: 8px 12px;
+    }
+}
+
+
+/* Header: center the logo, title/description and search by their actual height. */
+@media (min-width: 701px) {
+    .headerbar > .inner {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        padding: 8px 10px;
+    }
+    .headerbar .site-description {
+        display: flex;
+        align-items: center;
+        gap: 13px;
+        float: none;
+        width: auto;
+        min-width: 0;
+        flex: 1 1 auto;
+    }
+    .headerbar .logo {
+        display: block;
+        float: none;
+        flex: 0 0 auto;
+        padding: 0;
+        line-height: 0;
+        margin-top: 0;
+    }
+    .headerbar .nexora-site-text {
+        min-width: 0;
+    }
+    .headerbar .site-description h1 {
+        margin: 0;
+        max-height: none;
+        line-height: 1.2;
+        overflow-wrap: anywhere;
+    }
+    .headerbar .nexora-site-text > p:not(.skiplink) {
+        margin: 4px 0 0;
+        line-height: 1.4;
+        overflow-wrap: anywhere;
+    }
+    .headerbar .search-header {
+        float: none;
+        flex: 0 0 auto;
+        margin: 0;
+    }
+}
+
+/* Nexora Dark 1.0.3 UCP / MCP: compact panels and navigation.
+   Scoped to control-panel pages; preserve phpBB responsive tab handling. */
+:is(.section-ucp, .section-mcp) #tabs {
+    margin: 12px 0 8px;
+}
+:is(.section-ucp, .section-mcp) #tabs .tab > a {
+    margin: 0 3px 3px 0;
+    padding: 4px 8px;
+    font-size: .95em;
+    border: 1px solid rgba(143,124,255,.13);
+    border-radius: 4px;
+    background: #191621;
+    color: #e8e5ef;
+    box-shadow: none;
+}
+:is(.section-ucp, .section-mcp) #tabs .tab > a:hover,
+:is(.section-ucp, .section-mcp) #tabs .tab > a:focus-visible {
+    background: #252033;
+    border-color: rgba(143,124,255,.48);
+    color: #b7aaff;
+}
+:is(.section-ucp, .section-mcp) #tabs .activetab > a {
+    background: linear-gradient(180deg, #292139, #1b1528);
+    border-color: rgba(143,124,255,.48);
+    color: #b7aaff;
+    box-shadow: inset 0 -1px 0 rgba(143,124,255,.40);
+}
+:is(.section-ucp, .section-mcp) #tabs .tab > a:focus-visible,
+:is(.section-ucp, .section-mcp) #navigation a:focus-visible {
+    outline: 2px solid #80bfff;
+    outline-offset: 2px;
+}
+:is(.section-ucp, .section-mcp) .panel.bg3 {
+    padding: 12px;
+    border: 1px solid rgba(143,124,255,.22);
+    border-radius: 10px;
+    background: linear-gradient(135deg, #18141f, #111019);
+    box-shadow: 0 4px 16px rgba(0,0,0,.18);
+}
+:is(.section-ucp, .section-mcp) #cp-menu {
+    box-sizing: border-box;
+    margin-top: 0;
+}
+:is(.section-ucp, .section-mcp) #navigation {
+    padding-top: 0;
+}
+:is(.section-ucp, .section-mcp) #navigation li {
+    display: block;
+    margin: 0 0 3px;
+}
+:is(.section-ucp, .section-mcp) #navigation a {
+    margin: 0;
+    padding: 5px 8px;
+    font-size: .95em;
+    border: 1px solid rgba(143,124,255,.08);
+    border-radius: 4px;
+    background: #18151f;
+    background-image: none;
+    color: #e8e5ef;
+    overflow-wrap: anywhere;
+}
+:is(.section-ucp, .section-mcp) #navigation a:hover,
+:is(.section-ucp, .section-mcp) #navigation a:focus-visible {
+    background: #221d2e;
+    border-color: rgba(143,124,255,.35);
+    color: #b7aaff;
+}
+:is(.section-ucp, .section-mcp) #navigation .active-subsection a {
+    background: linear-gradient(90deg, #292139, #1b1726);
+    border-color: rgba(143,124,255,.35);
+    box-shadow: inset 2px 0 0 rgba(143,124,255,.70);
+    color: #b7aaff;
+}
+:is(.section-ucp, .section-mcp) #cp-menu .cp-mini {
+    margin: 9px 0 0;
+    padding: 8px 10px;
+    border: 1px solid rgba(143,124,255,.20);
+    border-radius: 7px;
+    background: #13111b;
+}
+:is(.section-ucp, .section-mcp) #cp-menu dl.mini dt {
+    color: #b7aaff;
+    padding-bottom: 5px;
+    border-bottom: 1px solid rgba(143,124,255,.16);
+}
+:is(.section-ucp, .section-mcp) #cp-main {
+    box-sizing: border-box;
+    min-width: 0;
+}
+:is(.section-ucp, .section-mcp) #cp-main > h2 {
+    margin: 0 0 12px;
+    padding: 0 2px;
+    color: #eeebf5;
+    font-size: 1.5em;
+}
+:is(.section-ucp, .section-mcp) #cp-main .panel {
+    margin-bottom: 12px;
+    padding: 12px 14px;
+    border: 1px solid rgba(143,124,255,.20);
+    border-radius: 8px;
+    background: #15121e;
+    box-shadow: 0 2px 8px rgba(0,0,0,.12);
+}
+:is(.section-ucp, .section-mcp) #cp-main .panel > .inner > h3 {
+    margin: 16px -14px 12px;
+    padding: 9px 14px;
+    border-top: 1px solid rgba(143,124,255,.18);
+    border-bottom: 1px solid rgba(143,124,255,.22);
+    background: linear-gradient(90deg, #251c35, #1b1727);
+    color: #b7aaff;
+    font-size: 1em;
+    line-height: 1.4;
+    letter-spacing: .02em;
+}
+:is(.section-ucp, .section-mcp) #cp-main .panel > .inner > h3:first-child {
+    margin-top: -12px;
+    border-top: 0;
+    border-radius: 7px 7px 0 0;
+}
+:is(.section-ucp, .section-mcp) #cp-main .panel > .inner > p {
+    line-height: 1.55;
+    margin-bottom: 12px;
+}
+:is(.section-ucp, .section-mcp) #cp-main .panel > .inner > p:last-child {
+    margin-bottom: 0;
+}
+:is(.section-ucp, .section-mcp) #cp-main table.table1 thead th {
+    padding: 9px 8px;
+    background: #1e182b;
+    color: #b7aaff;
+    border-bottom: 1px solid rgba(143,124,255,.25);
+}
+:is(.section-ucp, .section-mcp) #cp-main table.table1 td {
+    padding: 9px 8px;
+    border-bottom: 1px solid rgba(143,124,255,.10);
+    overflow-wrap: anywhere;
+}
+:is(.section-ucp, .section-mcp) #cp-main table.table1 tbody tr:nth-child(even) {
+    background-color: rgba(255,255,255,.025);
+}
+:is(.section-ucp, .section-mcp) #cp-main table.table1 tbody tr:hover {
+    background-color: rgba(143,124,255,.06);
+}
+.section-ucp #cp-main dl.details {
+    display: grid;
+    grid-template-columns: minmax(120px, 35%) minmax(0, 1fr);
+    margin: 0;
+}
+.section-ucp #cp-main dl.details > dt,
+.section-ucp #cp-main dl.details > dd {
+    float: none;
+    width: auto;
+    margin: 0;
+    padding: 9px 12px;
+    border-bottom: 1px solid rgba(143,124,255,.10);
+    text-align: left;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+}
+.section-ucp #cp-main dl.details > dt {
+    background: rgba(143,124,255,.04);
+    color: #aaa4b7;
+}
+.section-ucp #cp-main dl.details > dd {
+    background: rgba(255,255,255,.015);
+    color: #e8e5ef;
+}
+@media (min-width: 901px) {
+    :is(.section-ucp, .section-mcp) #cp-menu { width: 20%; padding-right: 12px; }
+    :is(.section-ucp, .section-mcp) #cp-main { width: 80%; }
+}
+@media (max-width: 900px) {
+    :is(.section-ucp, .section-mcp) .panel.bg3 { padding: 10px; }
+    :is(.section-ucp, .section-mcp) #cp-menu { margin-bottom: 16px; }
+    :is(.section-ucp, .section-mcp) #navigation { max-width: none; }
+    :is(.section-ucp, .section-mcp) #cp-menu .cp-mini { max-height: 140px; }
+}
+@media (max-width: 550px) {
+    :is(.section-ucp, .section-mcp) #tabs .tab > a { padding: 4px 7px; }
+    :is(.section-ucp, .section-mcp) #cp-main .panel { padding: 8px 10px; }
+    :is(.section-ucp, .section-mcp) #cp-main .panel > .inner > h3 { margin-right: -12px; margin-left: -12px; padding: 8px 12px; }
+    :is(.section-ucp, .section-mcp) #cp-main .panel > .inner > h3:first-child { margin-top: -10px; }
+    .section-ucp #cp-main dl.details { grid-template-columns: minmax(95px, 38%) minmax(0, 1fr); }
+    .section-ucp #cp-main dl.details > dt,
+    .section-ucp #cp-main dl.details > dd { padding: 8px; }
+    .section-mcp #cp-main table.table1 { display: block; max-width: 100%; overflow-x: auto; }
+    .section-mcp #cp-main table.table1 th,
+    .section-mcp #cp-main table.table1 td { min-width: 85px; }
+}
+
+/* Complete control-panel coverage: forms, lists, PMs and moderation tools. */
+:is(.section-ucp, .section-mcp) .sp-cp-title-icon {
+    color: #8f7cff;
+    font-size: .8em;
+    vertical-align: .06em;
+}
+:is(.section-ucp, .section-mcp) #cp-main .sp-cp-title {
+    margin: 0 0 12px;
+    padding: 0 2px;
+    color: #eeebf5;
+    font-size: 1.5em;
+    line-height: 1.4;
+}
+:is(.section-ucp, .section-mcp) #cp-main .sp-cp-title .small {
+    font-size: .65em;
+}
+:is(.section-ucp, .section-mcp) #cp-main .sp-cp-fields > dl {
+    padding: 8px 6px;
+    border-bottom: 1px solid rgba(143,124,255,.10);
+}
+:is(.section-ucp, .section-mcp) #cp-main .sp-cp-fields > dl:nth-of-type(even) {
+    background: rgba(255,255,255,.018);
+    border-radius: 4px;
+}
+:is(.section-ucp, .section-mcp) #cp-main .sp-cp-fields > dl:last-child {
+    border-bottom: 0;
+}
+:is(.section-ucp, .section-mcp) #cp-main fieldset dt label {
+    color: #e8e5ef;
+}
+:is(.section-ucp, .section-mcp) #cp-main fieldset dt > span {
+    color: #aaa4b7;
+    line-height: 1.5;
+}
+:is(.section-ucp, .section-mcp) #cp-main .inputbox,
+:is(.section-ucp, .section-mcp) #cp-main select {
+    box-sizing: border-box;
+    max-width: 100%;
+    padding: 5px 7px;
+    border: 1px solid rgba(143,124,255,.25);
+    border-radius: 5px;
+    background-color: #0c0b12;
+    color: #e8e5ef;
+}
+:is(.section-ucp, .section-mcp) #cp-main textarea.inputbox {
+    padding: 8px;
+    line-height: 1.5;
+}
+:is(.section-ucp, .section-mcp) #cp-main .inputbox:focus,
+:is(.section-ucp, .section-mcp) #cp-main select:focus {
+    border-color: #8f7cff;
+    box-shadow: 0 0 0 2px rgba(143,124,255,.12);
+    outline: none;
+}
+:is(.section-ucp, .section-mcp) #cp-main fieldset.submit-buttons {
+    margin: 12px 0;
+    padding: 8px 10px;
+    border: 1px solid rgba(143,124,255,.17);
+    border-radius: 7px;
+    background: #191522;
+}
+:is(.section-ucp, .section-mcp) #cp-main fieldset.submit-buttons input {
+    margin: 3px;
+}
+:is(.section-ucp, .section-mcp) #cp-main fieldset.display-options,
+:is(.section-ucp, .section-mcp) #cp-main fieldset.display-actions {
+    margin: 10px 0;
+    padding: 5px 8px;
+    font-size: .95em;
+    border-top: 1px solid rgba(143,124,255,.14);
+    line-height: 1.8;
+}
+:is(.section-ucp, .section-mcp) #cp-main ul.topiclist > li.header {
+    border-radius: 5px 5px 0 0;
+    background: linear-gradient(90deg, #251c35, #1b1727);
+}
+:is(.section-ucp, .section-mcp) #cp-main ul.topiclist > li.header dt,
+:is(.section-ucp, .section-mcp) #cp-main ul.topiclist > li.header dd {
+    color: #b7aaff;
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+:is(.section-ucp, .section-mcp) #cp-main ul.cplist {
+    border: 1px solid rgba(143,124,255,.18);
+    border-top: 0;
+    border-radius: 0 0 6px 6px;
+    margin-bottom: 14px;
+}
+:is(.section-ucp, .section-mcp) #cp-main ul.cplist > li.row {
+    border-top: 0;
+    border-bottom: 1px solid rgba(143,124,255,.10);
+    background-color: #191621;
+}
+:is(.section-ucp, .section-mcp) #cp-main ul.cplist > li.row.bg2 {
+    background-color: #12101a;
+}
+:is(.section-ucp, .section-mcp) #cp-main ul.cplist > li.row.bg3 {
+    background-color: #241c33;
+}
+:is(.section-ucp, .section-mcp) #cp-main ul.cplist > li.row:last-child {
+    border-bottom: 0;
+    border-radius: 0 0 5px 5px;
+}
+:is(.section-ucp, .section-mcp) #cp-main ul.cplist > li.row:hover {
+    background-color: #221b30;
+}
+:is(.section-ucp, .section-mcp) #cp-main .notification_list .notifications_time {
+    color: #aaa4b7;
+}
+:is(.section-ucp, .section-mcp) #cp-main .sp-cp-table-scroll {
+    max-width: 100%;
+    overflow-x: auto;
+    margin: 10px 0;
+    border: 1px solid rgba(143,124,255,.16);
+    border-radius: 4px;
+}
+:is(.section-ucp, .section-mcp) #cp-main .sp-cp-table-scroll table.table1 {
+    display: table;
+    width: 100%;
+    margin: 0;
+}
+:is(.section-ucp, .section-mcp) #cp-main .minitabs .tab > a {
+    border: 1px solid rgba(143,124,255,.20);
+    border-radius: 5px;
+    padding: 5px 8px;
+    background: #1b1727;
+    color: #e8e5ef;
+}
+:is(.section-ucp, .section-mcp) #cp-main .minitabs .activetab > a {
+    background: #292139;
+    border-color: rgba(143,124,255,.45);
+    color: #b7aaff;
+}
+:is(.section-ucp, .section-mcp) #cp-main .minitabs .tab > a:focus-visible {
+    outline: 2px solid #80bfff;
+    outline-offset: 2px;
+}
+.section-ucp #cp-main .post.pm {
+    padding: 12px 14px;
+    border: 1px solid rgba(143,124,255,.22);
+    border-radius: 8px;
+    background: linear-gradient(120deg, #1b1528, #12101a);
+    box-shadow: inset 3px 0 0 rgba(143,124,255,.40);
+}
+.section-ucp #cp-main .post.pm .postprofile {
+    border-color: rgba(143,124,255,.22);
+}
+.section-ucp #cp-main .post.pm .postbody h3 {
+    color: #b7aaff;
+    border-color: rgba(143,124,255,.20);
+}
+:is(.section-ucp, .section-mcp) #cp-main p.error {
+    padding: 9px 11px;
+    border: 1px solid rgba(255,112,132,.30);
+    border-radius: 4px;
+    background: rgba(150,35,55,.12);
+    color: #ffadb9;
+}
+:is(.section-ucp, .section-mcp) #cp-main .signature,
+:is(.section-ucp, .section-mcp) #cp-main .attachbox {
+    border-color: rgba(143,124,255,.20);
+}
+@media (max-width: 700px) {
+    :is(.section-ucp, .section-mcp) #cp-main .sp-cp-fields > dl {
+        padding: 9px 6px;
+    }
+    :is(.section-ucp, .section-mcp) #cp-main fieldset.submit-buttons {
+        padding: 8px;
+    }
+    :is(.section-ucp, .section-mcp) #cp-main .sp-cp-title {
+        font-size: 1.35em;
+    }
+    :is(.section-ucp, .section-mcp) #cp-main .sp-cp-table-scroll table.table1 {
+        min-width: 480px;
+    }
+    .section-ucp #cp-main .post.pm { padding: 8px 10px; }
+}
+@media (max-width: 550px) {
+    :is(.section-ucp, .section-mcp) #cp-main .sp-cp-fields > dl > dt,
+    :is(.section-ucp, .section-mcp) #cp-main .sp-cp-fields > dl > dd {
+        float: none;
+        width: auto;
+        margin-left: 0;
+        margin-right: 0;
+    }
+    :is(.section-ucp, .section-mcp) #cp-main .sp-cp-fields > dl > dt {
+        margin-bottom: 6px;
+    }
+}
+
+
+/* Slightly smaller settings text throughout UCP and MCP. */
+:is(.section-ucp, .section-mcp) #cp-main .sp-cp-fields {
+    font-size: 1em;
+    line-height: 1.45;
+}
+:is(.section-ucp, .section-mcp) #cp-main .sp-cp-fields dt label {
+    font-weight: 600;
+}
+:is(.section-ucp, .section-mcp) #cp-main .sp-cp-fields dt > span {
+    font-size: .95em;
+}
+:is(.section-ucp, .section-mcp) #cp-main .sp-cp-fields p {
+    font-size: inherit;
+}
+:is(.section-ucp, .section-mcp) #cp-main .sp-cp-title {
+    font-size: 1.35em;
+}
+@media (max-width: 700px) {
+    :is(.section-ucp, .section-mcp) #cp-main .sp-cp-title {
+        font-size: 1.25em;
+    }
+}
+
+/* Nexora Dark 1.0.3: search and posting pages. */
+.section-search .sp-search-title,
+.section-search .searchresults-title,
+.section-posting .posting-title {
+    margin: 12px 0 16px;
+    color: #eeebf5;
+    font-size: 1.6em;
+    line-height: 1.4;
+    overflow-wrap: anywhere;
+}
+.section-search .sp-search-title .icon { color: #8f7cff; font-size: .8em; }
+.section-search .sp-search-card,
+.sp-posting-card {
+    padding: 12px 14px;
+    margin-bottom: 12px;
+    border: 1px solid rgba(143,124,255,.22);
+    border-radius: 8px;
+    background: #15121e;
+    box-shadow: 0 3px 12px rgba(0,0,0,.15);
+}
+.section-search .sp-search-card > .inner > h3,
+.sp-posting-card > .inner > h3 {
+    margin: -12px -14px 12px;
+    padding: 8px 14px;
+    border-bottom: 1px solid rgba(143,124,255,.24);
+    border-radius: 7px 7px 0 0;
+    background: linear-gradient(90deg, #251c35, #1b1727);
+    color: #b7aaff;
+    font-size: 1em;
+    line-height: 1.4;
+    letter-spacing: .02em;
+}
+.section-search .sp-search-fields,
+.sp-posting-card fieldset {
+    font-size: 1em;
+    line-height: 1.45;
+}
+.section-search .sp-search-fields > dl {
+    padding: 9px 6px;
+    border-bottom: 1px solid rgba(143,124,255,.10);
+}
+.section-search .sp-search-fields > dl:last-child { border-bottom: 0; }
+.section-search .sp-search-fields dt label,
+.sp-posting-card fieldset dt label {
+    font-weight: 600;
+    color: #e8e5ef;
+}
+.section-search .sp-search-fields dt > span,
+.sp-posting-card fieldset dt > span {
+    font-size: .95em;
+    color: #aaa4b7;
+}
+.section-search .sp-search-fields .inputbox,
+.section-search .sp-search-fields select,
+.section-search .sp-search-fields input[type="number"],
+.sp-posting-card .inputbox,
+.sp-posting-card select {
+    box-sizing: border-box;
+    max-width: 100%;
+    padding: 5px 7px;
+    border: 1px solid rgba(143,124,255,.25);
+    border-radius: 5px;
+    background-color: #0c0b12;
+    color: #e8e5ef;
+}
+.section-search .sp-search-fields .inputbox:focus,
+.section-search .sp-search-fields select:focus,
+.section-search .sp-search-fields input[type="number"]:focus,
+.sp-posting-card .inputbox:focus,
+.sp-posting-card select:focus {
+    border-color: #8f7cff;
+    box-shadow: 0 0 0 2px rgba(143,124,255,.12);
+    outline: none;
+}
+.section-search #search_forum { width: 100%; }
+.section-search .sp-search-card .submit-buttons {
+    margin: 0;
+    padding: 2px;
+}
+.section-search .sp-search-history,
+.section-search .sp-search-topics {
+    padding: 0;
+    border: 1px solid rgba(143,124,255,.22);
+    border-radius: 8px;
+    background: #15121e;
+    box-shadow: 0 3px 12px rgba(0,0,0,.15);
+}
+.section-search .sp-search-history > .inner { overflow-x: auto; }
+.section-search .sp-search-history table.table1 { margin: 0; }
+.section-search .sp-search-history th {
+    padding: 9px 12px;
+    background: #251c35;
+    color: #b7aaff;
+    border-bottom: 1px solid rgba(143,124,255,.24);
+}
+.section-search .sp-search-history td { padding: 8px 12px; }
+.section-search .sp-search-topics li.header {
+    padding: 6px 10px;
+    border-radius: 7px 7px 0 0;
+    background: linear-gradient(90deg, #251c35, #1b1727);
+}
+.section-search .sp-search-topics li.header dt,
+.section-search .sp-search-topics li.header dd { color: #b7aaff; }
+.section-search .sp-search-topics li.row { border-color: rgba(143,124,255,.12); }
+.section-search .sp-search-topics li.row:last-child { border-radius: 0 0 7px 7px; }
+.section-search .sp-search-post {
+    margin-bottom: 12px;
+    padding: 12px 14px;
+    border: 1px solid rgba(143,124,255,.20);
+    border-radius: 8px;
+    box-shadow: inset 2px 0 0 rgba(143,124,255,.25), 0 3px 12px rgba(0,0,0,.15);
+}
+.section-search .sp-search-post.bg1 { background: #15121e; }
+.section-search .sp-search-post.bg2 { background: #191624; }
+.section-search .sp-search-post.reported { border-color: rgba(239,113,134,.45); }
+.section-search .sp-search-post .postprofile { border-color: rgba(143,124,255,.18); }
+.section-search .sp-search-post .search-result-date { color: #aaa4b7; }
+.section-search .sp-search-post .postbody h3 { font-size: 1.15em; }
+.section-search .sp-search-post .content { line-height: 1.55; }
+.section-search .sp-search-post ul.searchresults {
+    margin-top: 12px;
+    padding-top: 8px;
+    border-color: rgba(143,124,255,.18);
+}
+.section-search .advanced-search-link a {
+    display: inline-block;
+    padding: 4px 8px;
+    border: 1px solid rgba(143,124,255,.20);
+    border-radius: 4px;
+    background: #191522;
+}
+.sp-posting-card .sp-posting-fields > dl { padding: 7px 0; }
+.sp-posting-card #message-box textarea {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 10px;
+    line-height: 1.55;
+    border-radius: 6px;
+    resize: vertical;
+}
+.sp-posting-card #smiley-box {
+    box-sizing: border-box;
+    padding: 9px;
+    border: 1px solid rgba(143,124,255,.16);
+    border-radius: 6px;
+    background: #191522;
+}
+.sp-posting-card #smiley-box .bbcode-status { color: #aaa4b7; line-height: 1.5; }
+.sp-posting-card .submit-buttons { margin: 0; padding: 2px; }
+.sp-posting-card .submit-buttons input { margin: 3px; }
+.section-posting #tabs.sub-panels .tab > a {
+    margin: 0 3px 3px 0;
+    padding: 4px 8px;
+    border: 1px solid rgba(143,124,255,.18);
+    border-radius: 4px;
+    background: #191621;
+    color: #e8e5ef;
+    box-shadow: none;
+    font-size: .95em;
+}
+.section-posting #tabs.sub-panels .activetab > a {
+    background: #251d34;
+    border-color: rgba(143,124,255,.40);
+    color: #b7aaff;
+    box-shadow: inset 0 -1px 0 rgba(143,124,255,.40);
+}
+.section-posting #tabs.sub-panels .tab > a:focus-visible {
+    outline: 2px solid #80bfff;
+    outline-offset: 2px;
+}
+.post.sp-posting-preview {
+    padding: 12px 14px;
+    border: 1px solid rgba(143,124,255,.25);
+    border-radius: 8px;
+    background: #191624;
+    box-shadow: inset 2px 0 0 rgba(143,124,255,.40);
+}
+.sp-posting-preview .postbody {
+    float: none;
+    width: 100%;
+    min-width: 0;
+}
+.sp-posting-preview .postbody h3 {
+    margin: 0 0 10px;
+    padding-bottom: 8px;
+    border-color: rgba(143,124,255,.22);
+    color: #b7aaff;
+}
+.section-posting #review,
+.section-posting #topicreview .post { border-color: rgba(143,124,255,.20); }
+.section-posting #review { color: #b7aaff; font-size: 1em; padding: 8px 0; }
+.section-posting #topicreview .post { border-radius: 6px; }
+.sp-posting-card #file-list { border-color: rgba(143,124,255,.20); }
+.sp-posting-card p { line-height: 1.5; }
+@media (max-width: 700px) {
+    .section-search .sp-search-title,
+    .section-search .searchresults-title,
+    .section-posting .posting-title { font-size: 1.4em; }
+    .section-search .sp-search-card,
+    .sp-posting-card { padding: 10px 12px; }
+    .section-search .sp-search-card > .inner > h3,
+    .sp-posting-card > .inner > h3 {
+        margin: -10px -12px 10px;
+        padding: 7px 12px;
+    }
+    .section-search .sp-search-post,
+    .post.sp-posting-preview { padding: 10px 12px; }
+}
+@media (max-width: 550px) {
+    .section-search .sp-search-fields > dl > dt,
+    .section-search .sp-search-fields > dl > dd {
+        float: none;
+        width: auto;
+        margin-left: 0;
+        margin-right: 0;
+    }
+    .section-search .sp-search-fields > dl > dt { margin-bottom: 6px; }
+    .section-search .sp-search-fields dd label { display: inline-block; margin: 3px 0; }
+    .sp-posting-card #smiley-box { margin-bottom: 10px; }
+}
+
+.section-posting .post.sp-posting-preview { background: #191624; }
+
+/* Header Banner 3.2.4: keep its full-width layout outside the standard logo flex row. */
+.headerbar.nexora-custom-banner > .inner {
+    display: block;
+    padding: 0;
+}
+.headerbar.nexora-custom-banner .banner-header {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+}
+.headerbar.nexora-custom-banner .header-banner,
+.headerbar.nexora-custom-banner .mobile-header-banner {
+    max-width: 100% !important;
+    margin-left: auto;
+    margin-right: auto;
+}
+.headerbar.nexora-custom-banner img.header-banner,
+.headerbar.nexora-custom-banner img.mobile-header-banner {
+    height: auto;
+}
+.headerbar.nexora-custom-banner #headerbanner_logo {
+    margin-top: 0;
+    padding: 10px 13px 0 10px;
+}
+.rtl .headerbar.nexora-custom-banner #headerbanner_logo {
+    padding: 10px 10px 0 13px;
+}
+.headerbar.nexora-custom-banner #hidden {
+    max-width: 100%;
+    overflow-wrap: break-word;
+}
+/* Honour the extension's option to hide the header background. */
+.headerbar.nexora-banner-background-hidden {
+    background: transparent !important;
+    border: 0 !important;
+    box-shadow: none !important;
+}
+.headerbar.nexora-banner-background-hidden::before {
+    display: none;
+}
+
+/* Profile dropdown above the notifications/PM navbar row. */
+#nav-main {
+    position: relative;
+    z-index: 20;
+}
+#nav-breadcrumbs {
+    position: relative;
+    z-index: 10;
+}
+#username_logged_in,
+#username_logged_in .header-profile,
+#username_logged_in .dropdown-container {
+    z-index: 30 !important;
+}
+#username_logged_in .dropdown {
+    z-index: 40 !important;
+    /* Only the menu contents draw the frame; avoid a double top border. */
+    background: transparent !important;
+    border: 0 !important;
+    box-shadow: none !important;
+}
+#username_logged_in .dropdown-contents {
+    background: #15121e !important;
+    opacity: 1 !important;
+}
+.sp-user-messages {
+    z-index: 1 !important;
+}
+
+/* Pointer interiors match their popup; outlines remain visible. */
+.dropdown .pointer-inner,
+.dropdown-extended .pointer-inner {
+    border-color: #14131d transparent !important;
+}
+/* Keep navigation icons and message badges free of hover underlines. */
+#nav-main a:hover:has(.sp-message-icon),
+#nav-main a:focus:has(.sp-message-icon) {
+    text-decoration: none;
+}
+.nexora-search-label { display: none; }
+@media (max-width: 700px) {
+    #nav-breadcrumbs .nexora-search-label { display: inline; }
+}
+
+/* Dropdown wrappers position menus; only their contents draw a frame. */
+.dropdown {
+    border-width: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+}
+/* PM tools stay above the following message, including its positioned content. */
+.section-ucp #cp-main .panel:has(.topic-tools) {
+    position: relative;
+    z-index: 5;
+    overflow: visible;
+}
+.section-ucp #cp-main .topic-tools .dropdown {
+    z-index: 10;
+}
+
+.dropdown-extended .pointer-inner {
+    border-color: #15121e transparent !important;
+}

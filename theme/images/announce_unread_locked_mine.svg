@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30">
+
+        <defs>
+          <filter id="g" x="-70%" y="-70%" width="240%" height="240%">
+            <feGaussianBlur stdDeviation="1.25" result="blur"/>
+            <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+        </defs>
+<rect x="1.5" y="1.5" width="27" height="27" rx="6" fill="#14121d" stroke="#3a3352" stroke-width="1"/>
+<rect x="3" y="3" width="24" height="24" rx="4.7" fill="url(#none)" opacity=".01"/>
+<g fill="none" stroke="#a995ff" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" filter="url(#g)">
+      <path d="M7.3 13.2v3.6l9.2 3.4V9.8z"/>
+      <path d="M16.5 11.2c2.1 0 3.8 1.7 3.8 3.8s-1.7 3.8-3.8 3.8"/>
+      <path d="M9.1 17.5l1.1 4"/>
+    </g>
+    <circle cx="22.2" cy="7.8" r="2.7" fill="#ffb86b" opacity=".18"/>
+    <circle cx="22.2" cy="7.8" r="1.65" fill="#ffb86b"/>
+    <g>
+      <rect x="18.3" y="17.2" width="7.1" height="6.4" rx="1.4" fill="#1c1928" stroke="#c4b9ff" stroke-width="1"/>
+      <path d="M20.1 17.2v-1.4a1.75 1.75 0 0 1 3.5 0v1.4" fill="none" stroke="#c4b9ff" stroke-width="1.15" stroke-linecap="round"/>
+    </g>
+</svg>

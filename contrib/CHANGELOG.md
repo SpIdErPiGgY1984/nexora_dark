@@ -2,6 +2,13 @@
 
 ## 1.0.3
 
+- Increased separator and post-link contrast using the Nexora violet palette.
+- Applied 42px sizing directly to every standard forum/topic/PM status class.
+- Increased UCP/MCP panel spacing to 32px while retaining the PM menu layering fix.
+- Corrected responsive overflow-tab height, centered its menu glyph and removed its red hover state.
+- Restricted notification and PM hover underlines to their text labels at every screen width.
+- Replaced the Twitter contact sprite with an X vector icon, retaining phpBB's existing field class.
+
 - Corrected PM tools menu layering and removed the duplicate dropdown wrapper frame.
 - Follow-up visual fixes: translated mobile search label, violet return-link hover and default icons, visible foe markers, corrected dropdown pointer interiors, centered desktop logo, and larger 42px forum/topic icons with matching row spacing and click targets.
 

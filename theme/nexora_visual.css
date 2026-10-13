@@ -906,7 +906,7 @@ ul.topiclist.forums > li.row:hover {
 /* Preserve original internal separators */
 .stat-block hr,
 .stat-block .sp-stat-separator {
-    border-color: rgba(143,124,255,.15) !important;
+    border-color: #8f7cff !important;
 }
 
 @media (max-width: 700px) {
@@ -1260,7 +1260,7 @@ ul.topiclist.forums > li.row:hover {
     font-size: 1.5em;
 }
 :is(.section-ucp, .section-mcp) #cp-main .panel {
-    margin-bottom: 12px;
+    margin-bottom: 32px;
     padding: 12px 14px;
     border: 1px solid rgba(143,124,255,.20);
     border-radius: 8px;
@@ -1866,10 +1866,17 @@ ul.topiclist.forums > li.row:hover {
 .dropdown-extended .pointer-inner {
     border-color: #14131d transparent !important;
 }
-/* Keep navigation icons and message badges free of hover underlines. */
-#nav-main a:hover:has(.sp-message-icon),
-#nav-main a:focus:has(.sp-message-icon) {
+/* Underline only the text, never the bell/inbox icon, badge or spacing.
+   Both links live in nav-breadcrumbs, not nav-main. */
+.sp-user-messages .sp-user-message-item > a,
+.sp-user-messages > a.sp-user-message-item {
+    display: inline-flex;
+    align-items: center;
     text-decoration: none;
+}
+.sp-user-messages .sp-user-message-item > a:is(:hover, :focus-visible) > span:not(.sp-message-icon),
+.sp-user-messages > a.sp-user-message-item:is(:hover, :focus-visible) > span:not(.sp-message-icon) {
+    text-decoration: underline;
 }
 .nexora-search-label { display: none; }
 @media (max-width: 700px) {
@@ -1894,4 +1901,24 @@ ul.topiclist.forums > li.row:hover {
 
 .dropdown-extended .pointer-inner {
     border-color: #15121e transparent !important;
+}
+
+/* The responsive overflow tab uses the same line box as its neighbouring tabs. */
+:is(.section-ucp, .section-mcp) #tabs .responsive-tab > .responsive-tab-link,
+.minitabs .responsive-tab > .responsive-tab-link {
+    box-sizing: content-box;
+    font-size: .95em;
+    line-height: inherit;
+    width: 16px;
+}
+:is(.section-ucp, .section-mcp) #tabs .responsive-tab-link::before,
+.minitabs .responsive-tab-link::before {
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-color: #8f7cff;
+}
+:is(.section-ucp, .section-mcp) #tabs .responsive-tab-link:is(:hover, :focus-visible)::before,
+.minitabs .responsive-tab-link:is(:hover, :focus-visible)::before {
+    border-color: #b8adff;
 }

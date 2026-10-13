@@ -149,8 +149,7 @@ li.header dl.row-item dt .list-inner {
 
 dl.row-item {
 	background-repeat: no-repeat;
-	background-position: 10px 50%;
-	background-size: 42px 42px;		/* Position of folder icon */
+	background-position: 10px 50%;		/* Position of folder icon */
 }
 
 dl.row-item dt {

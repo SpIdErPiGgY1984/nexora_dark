@@ -1,5 +1,12 @@
 # Nexora Dark changelog
 
+## Unreleased — validation follow-up
+
+- Removed Header Banner extension variables from the core header markup and removed its extension-specific style overrides. Extension integrations should supply their own styling through extension stylesheet/template events.
+- Removed 13 overrides verified identical to prosilver 3.3.19; these templates now inherit from the parent style.
+- Refreshed the visual stylesheet cache key.
+
+
 ## 1.0.3
 
 - Increased separator and post-link contrast using the Nexora violet palette.

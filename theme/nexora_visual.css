@@ -1791,47 +1791,6 @@ ul.topiclist.forums > li.row:hover {
 
 .section-posting .post.sp-posting-preview { background: #191624; }
 
-/* Header Banner 3.2.4: keep its full-width layout outside the standard logo flex row. */
-.headerbar.nexora-custom-banner > .inner {
-    display: block;
-    padding: 0;
-}
-.headerbar.nexora-custom-banner .banner-header {
-    width: 100%;
-    max-width: 100%;
-    min-width: 0;
-}
-.headerbar.nexora-custom-banner .header-banner,
-.headerbar.nexora-custom-banner .mobile-header-banner {
-    max-width: 100% !important;
-    margin-left: auto;
-    margin-right: auto;
-}
-.headerbar.nexora-custom-banner img.header-banner,
-.headerbar.nexora-custom-banner img.mobile-header-banner {
-    height: auto;
-}
-.headerbar.nexora-custom-banner #headerbanner_logo {
-    margin-top: 0;
-    padding: 10px 13px 0 10px;
-}
-.rtl .headerbar.nexora-custom-banner #headerbanner_logo {
-    padding: 10px 10px 0 13px;
-}
-.headerbar.nexora-custom-banner #hidden {
-    max-width: 100%;
-    overflow-wrap: break-word;
-}
-/* Honour the extension's option to hide the header background. */
-.headerbar.nexora-banner-background-hidden {
-    background: transparent !important;
-    border: 0 !important;
-    box-shadow: none !important;
-}
-.headerbar.nexora-banner-background-hidden::before {
-    display: none;
-}
-
 /* Profile dropdown above the notifications/PM navbar row. */
 #nav-main {
     position: relative;
